@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6041B8DD28C3BD6700A19546 /* Favorite Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Favorite Words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6041B8DD28C3BD6700A19546 /* SEW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6041B8E028C3BD6700A19546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6041B8E228C3BD6700A19546 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6041B8E428C3BD6700A19546 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		6041B8D428C3BD6700A19546 = {
 			isa = PBXGroup;
 			children = (
-				6041B8DF28C3BD6700A19546 /* Favorite Words */,
+				6041B8DF28C3BD6700A19546 /* SEW */,
 				6041B8DE28C3BD6700A19546 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		6041B8DE28C3BD6700A19546 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6041B8DD28C3BD6700A19546 /* Favorite Words.app */,
+				6041B8DD28C3BD6700A19546 /* SEW.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6041B8DF28C3BD6700A19546 /* Favorite Words */ = {
+		6041B8DF28C3BD6700A19546 /* SEW */ = {
 			isa = PBXGroup;
 			children = (
 				6041B8E028C3BD6700A19546 /* AppDelegate.swift */,
@@ -67,15 +67,15 @@
 				6041B8F128C3BD6A00A19546 /* Info.plist */,
 				6041B8E928C3BD6700A19546 /* Favorite_Words.xcdatamodeld */,
 			);
-			path = "Favorite Words";
+			path = SEW;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6041B8DC28C3BD6700A19546 /* Favorite Words */ = {
+		6041B8DC28C3BD6700A19546 /* SEW */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6041B8F428C3BD6A00A19546 /* Build configuration list for PBXNativeTarget "Favorite Words" */;
+			buildConfigurationList = 6041B8F428C3BD6A00A19546 /* Build configuration list for PBXNativeTarget "SEW" */;
 			buildPhases = (
 				6041B8D928C3BD6700A19546 /* Sources */,
 				6041B8DA28C3BD6700A19546 /* Frameworks */,
@@ -85,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = "Favorite Words";
+			name = SEW;
 			productName = "Favorite Words";
-			productReference = 6041B8DD28C3BD6700A19546 /* Favorite Words.app */;
+			productReference = 6041B8DD28C3BD6700A19546 /* SEW.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6041B8D828C3BD6700A19546 /* Build configuration list for PBXProject "Favorite Words" */;
+			buildConfigurationList = 6041B8D828C3BD6700A19546 /* Build configuration list for PBXProject "SEW" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6041B8DC28C3BD6700A19546 /* Favorite Words */,
+				6041B8DC28C3BD6700A19546 /* SEW */,
 			);
 		};
 /* End PBXProject section */
@@ -293,7 +293,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 52244XZHVN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Favorite Words/Info.plist";
+				INFOPLIST_FILE = SEW/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -324,7 +324,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 52244XZHVN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Favorite Words/Info.plist";
+				INFOPLIST_FILE = SEW/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -349,7 +349,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6041B8D828C3BD6700A19546 /* Build configuration list for PBXProject "Favorite Words" */ = {
+		6041B8D828C3BD6700A19546 /* Build configuration list for PBXProject "SEW" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6041B8F228C3BD6A00A19546 /* Debug */,
@@ -358,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6041B8F428C3BD6A00A19546 /* Build configuration list for PBXNativeTarget "Favorite Words" */ = {
+		6041B8F428C3BD6A00A19546 /* Build configuration list for PBXNativeTarget "SEW" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6041B8F528C3BD6A00A19546 /* Debug */,
