@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  SEW
+//  Save Word
 //
 //  Created by Olexsii Levchenko on 9/3/22.
 //

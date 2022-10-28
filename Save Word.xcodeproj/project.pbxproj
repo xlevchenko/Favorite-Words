@@ -10,18 +10,16 @@
 		6041B8E128C3BD6700A19546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E028C3BD6700A19546 /* AppDelegate.swift */; };
 		6041B8E328C3BD6700A19546 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E228C3BD6700A19546 /* SceneDelegate.swift */; };
 		6041B8E528C3BD6700A19546 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E428C3BD6700A19546 /* ViewController.swift */; };
-		6041B8E828C3BD6700A19546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6041B8E628C3BD6700A19546 /* Main.storyboard */; };
 		6041B8EB28C3BD6700A19546 /* Favorite_Words.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E928C3BD6700A19546 /* Favorite_Words.xcdatamodeld */; };
 		6041B8ED28C3BD6A00A19546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6041B8EC28C3BD6A00A19546 /* Assets.xcassets */; };
 		6041B8F028C3BD6A00A19546 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6041B8EE28C3BD6A00A19546 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6041B8DD28C3BD6700A19546 /* SEW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEW.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6041B8DD28C3BD6700A19546 /* Save Word.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Save Word.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6041B8E028C3BD6700A19546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6041B8E228C3BD6700A19546 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6041B8E428C3BD6700A19546 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6041B8E728C3BD6700A19546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6041B8EA28C3BD6700A19546 /* Favorite_Words.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorite_Words.xcdatamodel; sourceTree = "<group>"; };
 		6041B8EC28C3BD6A00A19546 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6041B8EF28C3BD6A00A19546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,7 +40,7 @@
 		6041B8D428C3BD6700A19546 = {
 			isa = PBXGroup;
 			children = (
-				6041B8DF28C3BD6700A19546 /* SEW */,
+				6041B8DF28C3BD6700A19546 /* Save Word */,
 				6041B8DE28C3BD6700A19546 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,32 +48,31 @@
 		6041B8DE28C3BD6700A19546 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6041B8DD28C3BD6700A19546 /* SEW.app */,
+				6041B8DD28C3BD6700A19546 /* Save Word.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6041B8DF28C3BD6700A19546 /* SEW */ = {
+		6041B8DF28C3BD6700A19546 /* Save Word */ = {
 			isa = PBXGroup;
 			children = (
 				6041B8E028C3BD6700A19546 /* AppDelegate.swift */,
 				6041B8E228C3BD6700A19546 /* SceneDelegate.swift */,
 				6041B8E428C3BD6700A19546 /* ViewController.swift */,
-				6041B8E628C3BD6700A19546 /* Main.storyboard */,
 				6041B8EC28C3BD6A00A19546 /* Assets.xcassets */,
 				6041B8EE28C3BD6A00A19546 /* LaunchScreen.storyboard */,
 				6041B8F128C3BD6A00A19546 /* Info.plist */,
 				6041B8E928C3BD6700A19546 /* Favorite_Words.xcdatamodeld */,
 			);
-			path = SEW;
+			path = "Save Word";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6041B8DC28C3BD6700A19546 /* SEW */ = {
+		6041B8DC28C3BD6700A19546 /* Save Word */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6041B8F428C3BD6A00A19546 /* Build configuration list for PBXNativeTarget "SEW" */;
+			buildConfigurationList = 6041B8F428C3BD6A00A19546 /* Build configuration list for PBXNativeTarget "Save Word" */;
 			buildPhases = (
 				6041B8D928C3BD6700A19546 /* Sources */,
 				6041B8DA28C3BD6700A19546 /* Frameworks */,
@@ -85,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = SEW;
+			name = "Save Word";
 			productName = "Favorite Words";
-			productReference = 6041B8DD28C3BD6700A19546 /* SEW.app */;
+			productReference = 6041B8DD28C3BD6700A19546 /* Save Word.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6041B8D828C3BD6700A19546 /* Build configuration list for PBXProject "SEW" */;
+			buildConfigurationList = 6041B8D828C3BD6700A19546 /* Build configuration list for PBXProject "Save Word" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6041B8DC28C3BD6700A19546 /* SEW */,
+				6041B8DC28C3BD6700A19546 /* Save Word */,
 			);
 		};
 /* End PBXProject section */
@@ -130,7 +127,6 @@
 			files = (
 				6041B8F028C3BD6A00A19546 /* LaunchScreen.storyboard in Resources */,
 				6041B8ED28C3BD6A00A19546 /* Assets.xcassets in Resources */,
-				6041B8E828C3BD6700A19546 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,14 +147,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6041B8E628C3BD6700A19546 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6041B8E728C3BD6700A19546 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6041B8EE28C3BD6A00A19546 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -293,12 +281,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 52244XZHVN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SEW/Info.plist;
+				INFOPLIST_FILE = "/Users/xlevchenko/Development/Personal project/Save Word/Save word/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Save Word";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,7 +301,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -324,12 +314,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 52244XZHVN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SEW/Info.plist;
+				INFOPLIST_FILE = "/Users/xlevchenko/Development/Personal project/Save Word/Save word/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Save Word";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -342,14 +334,14 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6041B8D828C3BD6700A19546 /* Build configuration list for PBXProject "SEW" */ = {
+		6041B8D828C3BD6700A19546 /* Build configuration list for PBXProject "Save Word" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6041B8F228C3BD6A00A19546 /* Debug */,
@@ -358,7 +350,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6041B8F428C3BD6A00A19546 /* Build configuration list for PBXNativeTarget "SEW" */ = {
+		6041B8F428C3BD6A00A19546 /* Build configuration list for PBXNativeTarget "Save Word" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6041B8F528C3BD6A00A19546 /* Debug */,
