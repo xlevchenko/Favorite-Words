@@ -1,5 +1,4 @@
 
-#  SEW - Study English Words
+#  Save Word | Your vocabulary
 
-![Promo](https://user-images.githubusercontent.com/34953510/197361801-4f325651-ad73-40a2-b8e7-454fca2cddf9.png)
-
+![broshura](https://user-images.githubusercontent.com/34953510/198679938-3200821b-e440-4d13-b561-f203ddc24122.png)
