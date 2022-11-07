@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1ACCD3D686FABADC6F77A5 /* Pods_Save_Word.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C34F74D5A2C8698BBC58259 /* Pods_Save_Word.framework */; };
 		6041B8E128C3BD6700A19546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E028C3BD6700A19546 /* AppDelegate.swift */; };
 		6041B8E328C3BD6700A19546 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E228C3BD6700A19546 /* SceneDelegate.swift */; };
 		6041B8E528C3BD6700A19546 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E428C3BD6700A19546 /* ViewController.swift */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C34F74D5A2C8698BBC58259 /* Pods_Save_Word.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_Word.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F0DA2576079B94853850F0C /* Pods-Save Word.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save Word.debug.xcconfig"; path = "Target Support Files/Pods-Save Word/Pods-Save Word.debug.xcconfig"; sourceTree = "<group>"; };
 		6041B8DD28C3BD6700A19546 /* Save Word.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Save Word.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6041B8E028C3BD6700A19546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6041B8E228C3BD6700A19546 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		6041B8EF28C3BD6A00A19546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6041B8F128C3BD6A00A19546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6086B22D290C34DF00FA85C5 /* SWTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTabBarController.swift; sourceTree = "<group>"; };
+		D91E62DD3F1304408EB40DFE /* Pods-Save Word.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save Word.release.xcconfig"; path = "Target Support Files/Pods-Save Word/Pods-Save Word.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1ACCD3D686FABADC6F77A5 /* Pods_Save_Word.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B6E1F5E6E771B47DD8B58B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C34F74D5A2C8698BBC58259 /* Pods_Save_Word.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6041B8D428C3BD6700A19546 = {
 			isa = PBXGroup;
 			children = (
 				6041B8DF28C3BD6700A19546 /* Save Word */,
 				6041B8DE28C3BD6700A19546 /* Products */,
+				F34CA9349F88D4891288077A /* Pods */,
+				2B6E1F5E6E771B47DD8B58B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +85,16 @@
 			path = "Save Word";
 			sourceTree = "<group>";
 		};
+		F34CA9349F88D4891288077A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F0DA2576079B94853850F0C /* Pods-Save Word.debug.xcconfig */,
+				D91E62DD3F1304408EB40DFE /* Pods-Save Word.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6041B8F428C3BD6A00A19546 /* Build configuration list for PBXNativeTarget "Save Word" */;
 			buildPhases = (
+				0898C1D792D5E0807A25C842 /* [CP] Check Pods Manifest.lock */,
 				6041B8D928C3BD6700A19546 /* Sources */,
 				6041B8DA28C3BD6700A19546 /* Frameworks */,
 				6041B8DB28C3BD6700A19546 /* Resources */,
+				ADED52B0238E6F187FB86E67 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,6 +161,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0898C1D792D5E0807A25C842 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Save Word-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADED52B0238E6F187FB86E67 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Save Word/Pods-Save Word-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Save Word/Pods-Save Word-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Save Word/Pods-Save Word-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6041B8D928C3BD6700A19546 /* Sources */ = {
@@ -278,6 +347,7 @@
 		};
 		6041B8F528C3BD6A00A19546 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F0DA2576079B94853850F0C /* Pods-Save Word.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +381,7 @@
 		};
 		6041B8F628C3BD6A00A19546 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D91E62DD3F1304408EB40DFE /* Pods-Save Word.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

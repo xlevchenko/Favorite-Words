@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "add, create, new, plus, positive.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Logo.png",
+      "filename" : "add, create, new, plus, positive@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "add, create, new, plus, positive@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
