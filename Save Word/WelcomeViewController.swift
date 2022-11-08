@@ -54,7 +54,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-
+        
         view.addSubview(welcomeImageView)
         view.addSubview(welcomeLabel)
         view.addSubview(detaileLabel)
@@ -67,34 +67,34 @@ class WelcomeViewController: UIViewController {
     override func updateViewConstraints() {
         
         if (!didSetupConstraints) {
-            
+
             welcomeImageView.snp.makeConstraints { make in
                 make.top.equalTo(view.snp.top).offset(80.0)
-                make.left.equalTo(view.snp.left).offset(20.0)
-                make.right.equalTo(view.snp.right).offset(-20.0)
+                make.centerX.equalTo(view.snp.centerX)
+                make.size.equalTo(CGSize(width: 311, height: 324))
             }
             
             welcomeLabel.snp.makeConstraints { make in
-                make.top.equalTo(welcomeImageView.snp.bottom).offset(50)
+                make.top.equalTo(welcomeImageView.snp.bottom).offset(10)
                 make.left.equalTo(view.snp.left).offset(30)
             }
             
             detaileLabel.snp.makeConstraints { make in
-                make.top.equalTo(welcomeLabel.snp.bottom).offset(20)
+                make.top.equalTo(welcomeLabel.snp.bottom).offset(10)
                 make.left.equalTo(view.snp.left).offset(30)
                 make.right.equalTo(view.snp.right).offset(-30.0)
             }
             
             signUpButton.snp.makeConstraints { make in
-                make.top.equalTo(detaileLabel.snp.bottom).offset(50)
-                make.size.equalTo(CGSize(width: 222, height: 42))
+                make.top.equalTo(detaileLabel.snp.bottom).offset(20)
                 make.centerX.equalTo(view.snp.centerX)
+                make.size.equalTo(CGSize(width: 222, height: 42))
             }
             
             singInButton.snp.makeConstraints { make in
                 make.top.equalTo(signUpButton.snp.bottom).offset(10)
+                make.centerX.equalTo(signUpButton.snp.centerX)
                 make.size.equalTo(CGSize(width: 222, height: 42))
-                make.centerX.equalTo(view.snp.centerX)
             }
         }
         super.updateViewConstraints()
