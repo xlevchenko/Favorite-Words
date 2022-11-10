@@ -87,34 +87,16 @@ class WelcomeViewController: UIViewController {
             welcomeImageView.snp.makeConstraints { make in
                 if UIDevice().userInterfaceIdiom == .phone {
                     switch UIScreen.main.bounds.size.height {
-                    case 667:
+                    case 667, 736:
                         print("iPhone SE (3rd & 2nd Gen), iPhone 8, iPhone 7, iPhone 6S")
-                        make.top.equalTo(view.snp.top).offset(60)
-                    case 736:
-                        print("iPhone 8 Plus, iPhone 7 Plus, iPhone 6S Plus")
-                        make.top.equalTo(view.snp.top).offset(80)
-                    case 812:
-                        print("iPhone 11 Pro, iPhone XS, iPhone X, iPhone 13 mini, iPhone 12 mini")
-                        make.top.equalTo(view.snp.top).offset(80)
-                    case 844:
-                        print("iPhone 14, iPhone 13 Pro, iPhone 13, iPhone 12 Pro, iPhone 12")
-                        make.top.equalTo(view.snp.top).offset(170)
-                    case 852:
-                        print("iPhone 14 Pro")
-                        make.top.equalTo(view.snp.top).offset(170)
-                    case 896:
-                        print("iPhone 11 Pro Max, iPhone XS Max, iPhone 11, iPhone XR")
-                        make.top.equalTo(view.snp.top).offset(170)
-                    case 932, 926:
-                        print("iPhone 14 Pro Max, iPhone 14 Plus, iPhone 13 Pro Max, iPhone 12 Pro Max")
-                        make.top.equalTo(view.snp.top).offset(170)
+                       make.top.equalTo(view.snp.top).offset(60)
                     default:
-                        print("Unknown")
+                    make.top.equalTo(view.snp.top).offset(170)
+                        print("Other Devices")
                     }
-                }
-                //make.top.equalTo(view.snp.top).offset(80)
-                make.left.equalTo(view.snp.left).offset(20)
-                make.right.equalTo(view.snp.right).offset(-20)
+               }
+                make.centerX.equalTo(view.snp.centerX)
+                make.size.equalTo(CGSize(width: 331, height: 344))
             }
             
             welcomeLabel.snp.makeConstraints { make in
@@ -133,7 +115,7 @@ class WelcomeViewController: UIViewController {
             signUpButton.snp.makeConstraints { make in
                 make.top.equalTo(detaileLabel.snp.bottom).offset(20)
                 make.centerX.equalTo(view.snp.centerX)
-                make.size.equalTo(CGSize(width: 222, height: 42))
+                make.size.equalTo(CGSize(width: 259, height: 42))
             }
             
             singInButton.snp.makeConstraints { make in
