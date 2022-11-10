@@ -10,7 +10,10 @@ import SnapKit
 
 class WelcomeViewController: UIViewController {
     
-    var didSetupConstraints = false
+    private var topImageContainerView: UIView = {
+        let view = UIView()
+        return view
+    }()
     
     private var welcomeImageView: UIImageView = {
         let imageView = UIImageView()
@@ -34,75 +37,55 @@ class WelcomeViewController: UIViewController {
     }()
     
     private var signUpButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setTitle("Sing Up", for: .normal)
         button.backgroundColor = UIColor(red: 0.24, green: 0.60, blue: 0.82, alpha: 1.00)
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 15
         return button
     }()
     
     private var singInButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sing In", for: .normal)
-        button.setTitleColor(.black, for: .normal) //= UIColor(red: 0.24, green: 0.60, blue: 0.82, alpha: 1.00)
-        button.layer.cornerRadius = 10
+        button.setTitleColor(.black, for: .normal)
+        button.layer.cornerRadius = 15
         button.layer.borderWidth = 1
         button.layer.borderColor = CGColor(red: 0.24, green: 0.60, blue: 0.82, alpha: 1.00)
         return button
     }()
     
-    lazy var stackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = 20.0
-        stack.alignment = .fill
-        stack.distribution = .fillProportionally
-        [self.welcomeImageView,
-            self.welcomeLabel,
-            self.detaileLabel,
-            self.signUpButton,
-            self.singInButton].forEach { stack.addArrangedSubview($0) }
-        return stack
-    }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        view.addSubview(welcomeImageView)
+        view.addSubview(topImageContainerView)
+        topImageContainerView.addSubview(welcomeImageView)
         view.addSubview(welcomeLabel)
         view.addSubview(detaileLabel)
         view.addSubview(signUpButton)
         view.addSubview(singInButton)
+        
         view.setNeedsUpdateConstraints()
     }
     
-    let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneX || DeviceTypes.isiPhoneXsMaxAndXr ? 170 : 80
-    
-
     override func updateViewConstraints() {
-        
-        if (!didSetupConstraints) {
-
+            
+            topImageContainerView.snp.makeConstraints { make in
+                make.top.equalTo(view.snp.top).offset(30)
+                make.left.right.equalToSuperview()
+                make.height.equalTo(view.snp.height).multipliedBy(0.5)
+            }
+            
             welcomeImageView.snp.makeConstraints { make in
-                if UIDevice().userInterfaceIdiom == .phone {
-                    switch UIScreen.main.bounds.size.height {
-                    case 667, 736:
-                        print("iPhone SE (3rd & 2nd Gen), iPhone 8, iPhone 7, iPhone 6S")
-                       make.top.equalTo(view.snp.top).offset(60)
-                    default:
-                    make.top.equalTo(view.snp.top).offset(170)
-                        print("Other Devices")
-                    }
-               }
-                make.centerX.equalTo(view.snp.centerX)
-                make.size.equalTo(CGSize(width: 331, height: 344))
+                make.centerX.equalTo(topImageContainerView.snp.centerX)
+                make.centerY.equalTo(topImageContainerView.snp.centerY).offset(50)
+                make.size.equalTo(CGSize(width: 331, height: 344)).multipliedBy(0.6)
             }
             
             welcomeLabel.snp.makeConstraints { make in
-                make.top.equalTo(welcomeImageView.snp.bottom).offset(30)
-                make.left.equalTo(view.snp.left).offset(30)
-                make.right.equalTo(view.snp.right).offset(-20)
+                make.top.equalTo(topImageContainerView.snp.bottom).offset(65)
+                make.left.right.equalToSuperview().offset(30)
             }
             
             detaileLabel.snp.makeConstraints { make in
@@ -113,21 +96,16 @@ class WelcomeViewController: UIViewController {
             
             
             signUpButton.snp.makeConstraints { make in
-                make.top.equalTo(detaileLabel.snp.bottom).offset(20)
+                make.top.equalTo(detaileLabel.snp.bottom).offset(25)
                 make.centerX.equalTo(view.snp.centerX)
-                make.size.equalTo(CGSize(width: 259, height: 42))
+                make.size.equalTo(CGSize(width: 280, height: 50))
             }
             
             singInButton.snp.makeConstraints { make in
-                make.top.equalTo(signUpButton.snp.bottom).offset(10)
+                make.top.equalTo(signUpButton.snp.bottom).offset(15)
                 make.centerX.equalTo(signUpButton.snp.centerX)
                 make.size.equalTo(signUpButton)
             }
-            
-           
-            didSetupConstraints = true
-        }
         super.updateViewConstraints()
     }
-    
 }
