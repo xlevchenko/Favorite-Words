@@ -36,11 +36,13 @@ class WelcomeViewController: UIViewController {
         return label
     }()
     
-    private var signUpButton: UIButton = {
-        let button = UIButton()
+    private var signUpButton: CustomButton = {
+        let button = CustomButton()
         button.setTitle("Sing Up", for: .normal)
-        button.backgroundColor = UIColor(red: 0.24, green: 0.60, blue: 0.82, alpha: 1.00)
-        button.layer.cornerRadius = 15
+        button.setGradientColor(
+            colors: [UIColor(red: 0.31, green: 0.70, blue: 0.88, alpha: 1.00).cgColor,
+                     UIColor(red: 0.15, green: 0.48, blue: 0.75, alpha: 1.00).cgColor],
+            cornerRadius: 15)
         return button
     }()
     
@@ -49,7 +51,7 @@ class WelcomeViewController: UIViewController {
         button.setTitle("Sing In", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 15
-        button.layer.borderWidth = 1
+        button.layer.borderWidth = 1.5
         button.layer.borderColor = CGColor(red: 0.24, green: 0.60, blue: 0.82, alpha: 1.00)
         return button
     }()
@@ -65,7 +67,6 @@ class WelcomeViewController: UIViewController {
         view.addSubview(detaileLabel)
         view.addSubview(signUpButton)
         view.addSubview(singInButton)
-        
         view.setNeedsUpdateConstraints()
     }
     
