@@ -30,17 +30,16 @@ class SignInViewController: UIViewController {
     }()
     
     private var usernameTextField: UITextField = {
-        let textField = UITextField()
+        let textField = CustomTextField()
         textField.placeholder = "Enter username or email"
-        //textField.borderStyle = .roundedRect
-        textField.layer.cornerRadius = 15
-        textField.leftViewMode = .always
         textField.setLeftView(image: UIImage(systemName: "person.fill")!)
-        textField.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.00)
-        textField.layer.borderColor = UIColor(red: 0.79, green: 0.79, blue: 0.79, alpha: 1.00).cgColor
-        textField.layer.borderWidth = 0.5
-        textField.font = .systemFont(ofSize: 14, weight: .regular)
-        
+        return textField
+    }()
+    
+    private var passwordTextField: UITextField = {
+        let textField = CustomTextField()
+        textField.placeholder = "Enter password"
+        textField.setLeftView(image: UIImage(systemName: "lock.fill")!)
         return textField
     }()
 
@@ -52,6 +51,7 @@ class SignInViewController: UIViewController {
         logoContainerView.addSubview(logoImageView)
         view.addSubview(signInContainerView)
         signInContainerView.addSubview(usernameTextField)
+        signInContainerView.addSubview(passwordTextField)
         view.updateConstraintsIfNeeded()
     }
 
@@ -80,6 +80,11 @@ class SignInViewController: UIViewController {
             make.size.equalTo(CGSize(width: 260, height: 50))
         }
         
+        passwordTextField.snp.makeConstraints { make in
+            make.top.equalTo(usernameTextField.snp.bottom).offset(10)
+            make.centerX.equalTo(usernameTextField.snp.centerX)
+            make.size.equalTo(usernameTextField)
+        }
         super.updateViewConstraints()
     }
     
