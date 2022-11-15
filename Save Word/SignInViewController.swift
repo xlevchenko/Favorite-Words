@@ -12,7 +12,6 @@ class SignInViewController: UIViewController {
     
     private var logoContainerView: UIView = {
         let view = UIView()
-        //view.backgroundColor = .white
         return view
     }()
     
@@ -42,7 +41,26 @@ class SignInViewController: UIViewController {
         textField.setLeftView(image: UIImage(systemName: "lock.fill")!)
         return textField
     }()
+    
+    private var forgotPasswordButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Forgot password?", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 12, weight: .regular)
+        button.setTitleColor(.secondaryLabel, for: .normal)
+        return button
+    }()
 
+    private var signInButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Sign In", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = UIColor(red: 1.00, green: 0.79, blue: 0.24, alpha: 1.00)
+        button.layer.cornerRadius = 15
+        return button
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.43, green: 0.38, blue: 0.98, alpha: 1.00)
@@ -52,6 +70,8 @@ class SignInViewController: UIViewController {
         view.addSubview(signInContainerView)
         signInContainerView.addSubview(usernameTextField)
         signInContainerView.addSubview(passwordTextField)
+        signInContainerView.addSubview(forgotPasswordButton)
+        signInContainerView.addSubview(signInButton)
         view.updateConstraintsIfNeeded()
     }
 
@@ -85,6 +105,18 @@ class SignInViewController: UIViewController {
             make.centerX.equalTo(usernameTextField.snp.centerX)
             make.size.equalTo(usernameTextField)
         }
+        
+        forgotPasswordButton.snp.makeConstraints { make in
+            make.top.equalTo(passwordTextField.snp.bottom).offset(7)
+            make.right.equalTo(passwordTextField.snp.right).offset(-5)
+        }
+        
+        signInButton.snp.makeConstraints { make in
+            make.top.equalTo(forgotPasswordButton.snp.bottom).offset(10)
+            make.centerX.equalTo(passwordTextField.snp.centerX)
+            make.size.equalTo(passwordTextField)
+        }
+        
         super.updateViewConstraints()
     }
     
