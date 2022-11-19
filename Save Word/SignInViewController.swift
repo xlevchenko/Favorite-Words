@@ -38,6 +38,7 @@ class SignInViewController: UIViewController {
     private var passwordTextField: UITextField = {
         let textField = CustomTextField()
         textField.placeholder = "Enter password"
+        textField.isSecureTextEntry = true
         textField.setLeftView(image: UIImage(systemName: "lock.fill")!)
         return textField
     }()
