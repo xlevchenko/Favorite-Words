@@ -56,7 +56,7 @@ class WelcomeViewController: UIViewController {
         return label
     }()
     
-    private var singInButton: UIButton = {
+    private var signInButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign In", for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 15)
@@ -82,7 +82,7 @@ class WelcomeViewController: UIViewController {
         view.addSubview(signUpButton)
         view.addSubview(stackView)
         stackView.addArrangedSubview(signInLabel)
-        stackView.addArrangedSubview(singInButton)
+        stackView.addArrangedSubview(signInButton)
         view.setNeedsUpdateConstraints()
     }
     
@@ -120,7 +120,6 @@ class WelcomeViewController: UIViewController {
         stackView.snp.makeConstraints { make in
             make.top.equalTo(signUpButton.snp.bottom).offset(12)
             make.centerX.equalTo(view.snp.centerX)
-            //make.size.equalTo(signUpButton)
         }
         super.updateViewConstraints()
     }
