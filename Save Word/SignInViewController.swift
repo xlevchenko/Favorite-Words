@@ -20,38 +20,21 @@ class SignInViewController: UIViewController {
         return view
     }()
     
-    private var usernameTextField: UITextField = {
-        let textField = CustomTextField()
-        textField.placeholder = "Enter username or email"
-        textField.setLeftView(image: UIImage(systemName: "person.fill")!)
-        return textField
-    }()
+    let usernameTextField = CustomTextField(
+        image: UIImage(systemName: "person.fill")!,
+        placeholder: "Enter username or email")
+
+    let passwordTextField = CustomTextField(
+        image: UIImage(systemName: "lock.fill")!,
+        placeholder: "Enter password",
+        isSecure: true)
     
-    private var passwordTextField: UITextField = {
-        let textField = CustomTextField()
-        textField.placeholder = "Enter password"
-        textField.isSecureTextEntry = true
-        textField.setLeftView(image: UIImage(systemName: "lock.fill")!)
-        return textField
-    }()
-    
-    private var forgotPasswordButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Forgot password?", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 12, weight: .regular)
-        button.setTitleColor(.secondaryLabel, for: .normal)
-        return button
-    }()
-    
-    private var signInButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Sign In", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = UIColor(red: 1.00, green: 0.79, blue: 0.24, alpha: 1.00)
-        button.layer.cornerRadius = 15
-        return button
-    }()
+    let forgotPasswordButton = UIButton(
+        title: "Forgot password?",
+        font: .systemFont(ofSize: 12, weight: .regular),
+        color: .secondaryLabel)
+        
+    let signInButton = CustomButton(title: "Sign In")
     
     private var signInSocialMediaTextLabel: UILabel = {
         let label = UILabel()
@@ -61,24 +44,10 @@ class SignInViewController: UIViewController {
         return label
     }()
     
-    private var signInFacebookButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "Facebook"), for: .normal)
-        return button
-    }()
-    
-    private var signInTwitterButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "Twitter"), for: .normal)
-        return button
-    }()
-    
-    private var signInGoogleButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "Google"), for: .normal)
-        return button
-    }()
-    
+    let signInFacebookButton = UIButton(image: UIImage(named: "Facebook")!)
+    let signInTwitterButton = UIButton(image: UIImage(named: "Twitter")!)
+    let signInGoogleButton = UIButton(image: UIImage(named: "Google")!)
+        
     private var socialMediaButtonsStackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -195,5 +164,4 @@ class SignInViewController: UIViewController {
         }
         super.updateViewConstraints()
     }
-    
 }

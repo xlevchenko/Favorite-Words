@@ -18,6 +18,21 @@ class CustomTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
+    convenience init(image: UIImage, placeholder: String) {
+        self.init(frame: .zero)
+        self.setLeftView(image: image)
+        self.placeholder = placeholder
+        configure()
+    }
+    
+    convenience init(image: UIImage, placeholder: String, isSecure: Bool) {
+        self.init(frame: .zero)
+        self.setLeftView(image: image)
+        self.placeholder = placeholder
+        self.isSecureTextEntry = isSecure
+        configure()
+    }
+    
     private func configure() {
         layer.cornerRadius = 15
         leftViewMode = .always

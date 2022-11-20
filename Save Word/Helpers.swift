@@ -19,3 +19,17 @@ extension UITextField {
     self.tintColor = .lightGray
   }
 }
+
+extension UIButton {
+    convenience init(image: UIImage) {
+        self.init(frame: .zero)
+        self.setImage(image, for: .normal)
+    }
+    
+    convenience init(title: String, font: UIFont, color: UIColor) {
+        self.init(frame: .zero)
+        self.setTitle(title, for: .normal)
+        self.titleLabel?.font = font
+        self.setTitleColor(color, for: .normal)
+    }
+}

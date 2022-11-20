@@ -38,16 +38,8 @@ class WelcomeViewController: UIViewController {
         return label
     }()
     
-    private var signUpButton: CustomButton = {
-        let button = CustomButton()
-        button.setTitle("Sign Up", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = UIColor(red: 1.00, green: 0.79, blue: 0.24, alpha: 1.00)
-        button.layer.cornerRadius = 15
-        return button
-    }()
-    
+    let signUpButton = CustomButton(title: "Sign Up")
+       
     private var signInLabel = {
         let label = UILabel()
         label.text = "Already have an account!"
