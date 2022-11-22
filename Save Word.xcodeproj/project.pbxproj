@@ -15,6 +15,9 @@
 		6041B8ED28C3BD6A00A19546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6041B8EC28C3BD6A00A19546 /* Assets.xcassets */; };
 		6041B8F028C3BD6A00A19546 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6041B8EE28C3BD6A00A19546 /* LaunchScreen.storyboard */; };
 		6086B22E290C34DF00FA85C5 /* SWTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086B22D290C34DF00FA85C5 /* SWTabBarController.swift */; };
+		60997243292C024B001208E7 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60997242292C024B001208E7 /* TitleLabel.swift */; };
+		60997245292C026A001208E7 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60997244292C026A001208E7 /* BodyLabel.swift */; };
+		60997247292C0299001208E7 /* SecondaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60997246292C0299001208E7 /* SecondaryLabel.swift */; };
 		60BA668C292146DC00922E56 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA668B292146DC00922E56 /* SignInViewController.swift */; };
 		60BA668E29216F5D00922E56 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA668D29216F5D00922E56 /* Helpers.swift */; };
 		60BA66912921778400922E56 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA66902921778400922E56 /* CustomTextField.swift */; };
@@ -34,6 +37,9 @@
 		6041B8EF28C3BD6A00A19546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6041B8F128C3BD6A00A19546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6086B22D290C34DF00FA85C5 /* SWTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTabBarController.swift; sourceTree = "<group>"; };
+		60997242292C024B001208E7 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		60997244292C026A001208E7 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
+		60997246292C0299001208E7 /* SecondaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryLabel.swift; sourceTree = "<group>"; };
 		60BA668B292146DC00922E56 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		60BA668D29216F5D00922E56 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		60BA66902921778400922E56 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -99,11 +105,22 @@
 			path = "Save Word";
 			sourceTree = "<group>";
 		};
+		60997248292C02A6001208E7 /* Titles */ = {
+			isa = PBXGroup;
+			children = (
+				60997242292C024B001208E7 /* TitleLabel.swift */,
+				60997244292C026A001208E7 /* BodyLabel.swift */,
+				60997246292C0299001208E7 /* SecondaryLabel.swift */,
+			);
+			path = Titles;
+			sourceTree = "<group>";
+		};
 		60BA403F291D9EC400F9533C /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
 				60BA668F2921774700922E56 /* TextFields */,
 				60BA4040291D9EDE00F9533C /* Buttons */,
+				60997248292C02A6001208E7 /* Titles */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -247,10 +264,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60997245292C026A001208E7 /* BodyLabel.swift in Sources */,
 				6041B8E528C3BD6700A19546 /* ViewController.swift in Sources */,
 				60DBB542291D961600D4DB35 /* CustomButton.swift in Sources */,
+				60997247292C0299001208E7 /* SecondaryLabel.swift in Sources */,
 				6086B22E290C34DF00FA85C5 /* SWTabBarController.swift in Sources */,
 				6041B8EB28C3BD6700A19546 /* Favorite_Words.xcdatamodeld in Sources */,
+				60997243292C024B001208E7 /* TitleLabel.swift in Sources */,
 				60BA66912921778400922E56 /* CustomTextField.swift in Sources */,
 				60BA668E29216F5D00922E56 /* Helpers.swift in Sources */,
 				60BA668C292146DC00922E56 /* SignInViewController.swift in Sources */,

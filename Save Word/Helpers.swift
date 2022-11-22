@@ -33,3 +33,21 @@ extension UIButton {
         self.setTitleColor(color, for: .normal)
     }
 }
+
+extension UIView {
+    convenience init(cornerRadius: CGFloat, backgroundColor: UIColor) {
+        self.init(frame: .zero)
+        self.layer.cornerRadius = cornerRadius
+        self.backgroundColor = backgroundColor
+    }
+}
+
+
+extension UIStackView {
+    convenience init(axis: NSLayoutConstraint.Axis, spacing: CGFloat, distribution: Distribution) {
+        self.init(frame: .zero)
+        self.axis = axis
+        self.spacing = spacing
+        self.distribution = distribution
+    }
+}

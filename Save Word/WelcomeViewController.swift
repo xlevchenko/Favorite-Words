@@ -10,53 +10,22 @@ import SnapKit
 
 class WelcomeViewController: UIViewController {
     
-    private var topImageContainerView: UIView = {
-        let view = UIView()
-        return view
-    }()
-    
-    private var welcomeImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "welcome")
-        return imageView
-    }()
-    
-    private var welcomeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Welcome!"
-        label.font = .systemFont(ofSize: 36, weight: .heavy)
-        label.textColor = .white
-        return label
-    }()
-    
-    private var detaileLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Log in with your data that you entered during Your registration."
-        label.font = .systemFont(ofSize: 18, weight: .regular)
-        label.textColor = .white
-        label.numberOfLines = 0
-        return label
-    }()
-    
+    let topImageContainerView = UIView()
+    let welcomeImageView = UIImageView(image: UIImage(named: "welcome"))
+    let welcomeLabel = TitleLabel("Welcome!", fontSize: 36)
+    let detaileLabel = BodyLabel("Log in with your data that you entered during Your registration.", fontSize: 18)
     let signUpButton = CustomButton(title: "Sign Up")
-       
-    private var signInLabel = {
-        let label = UILabel()
-        label.text = "Already have an account!"
-        label.font = .systemFont(ofSize: 15, weight: .medium)
-        label.textColor = .white
-        return label
-    }()
+    let signInLabel = BodyLabel("Already have an account!", fontSize: 15)
     
-    private var signInButton: UIButton = {
+    let signInButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign In", for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 15)
-        button.setTitleColor(UIColor(red: 1.00, green: 0.79, blue: 0.24, alpha: 1.00), for: .normal)
+        button.setTitleColor(.systemYellow, for: .normal)
         return button
     }()
-    
-    private var stackView: UIStackView = {
+
+    let stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.spacing = 4

@@ -12,72 +12,67 @@ class SignInViewController: UIViewController {
     
     let logoContainerView = UIView()
     let logoImageView = UIImageView(image: UIImage(named: "logoWhite"))
+    let signInContainerView = UIView(cornerRadius: 58, backgroundColor: .white)
     
-    private var signInContainerView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 58
-        view.backgroundColor = .white
-        return view
+    let usernameTextField: CustomTextField = {
+        let textField = CustomTextField()
+        textField.setLeftView(image: UIImage(systemName: "person.fill")!)
+        textField.placeholder = "Enter username or email"
+        return textField
     }()
     
-    let usernameTextField = CustomTextField(
-        image: UIImage(systemName: "person.fill")!,
-        placeholder: "Enter username or email")
-
-    let passwordTextField = CustomTextField(
-        image: UIImage(systemName: "lock.fill")!,
-        placeholder: "Enter password",
-        isSecure: true)
+    let passwordTextField: CustomTextField = {
+        let textField = CustomTextField()
+        textField.setLeftView(image: UIImage(systemName: "lock.fill")!)
+        textField.placeholder = "Enter password"
+        textField.isSecureTextEntry = true
+        return textField
+    }()
     
-    let forgotPasswordButton = UIButton(
-        title: "Forgot password?",
-        font: .systemFont(ofSize: 12, weight: .regular),
-        color: .secondaryLabel)
-        
+    let forgotPasswordButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Forgot password?", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 12, weight: .regular)
+        button.setTitleColor(.secondaryLabel, for: .normal)
+        return button
+    }()
+    
     let signInButton = CustomButton(title: "Sign In")
+    let signInSocialMediaTextLabel = SecondaryLabel("Or", fontSize: 13)
     
-    private var signInSocialMediaTextLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Or"
-        label.tintColor = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.00)
-        label.font  = .systemFont(ofSize: 13, weight: .regular)
-        return label
+    let socialMediaButtonsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 15
+        stackView.distribution = .fill
+        return stackView
     }()
     
     let signInFacebookButton = UIButton(image: UIImage(named: "Facebook")!)
     let signInTwitterButton = UIButton(image: UIImage(named: "Twitter")!)
     let signInGoogleButton = UIButton(image: UIImage(named: "Google")!)
-        
-    private var socialMediaButtonsStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.spacing = 15
-        stack.distribution = .fill
-        return stack
+    
+    let presentSignUpSceenStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 10
+        stackView.distribution = .equalCentering
+        return stackView
     }()
     
-    private var alreadyHaveAccountTextLabel = {
-        let label = UILabel()
+    let haveAccountTextLabel: BodyLabel = {
+        let label = BodyLabel()
         label.text = "Already have an account!"
-        label.font = .systemFont(ofSize: 14, weight: .regular)
         label.textColor = .black
         return label
     }()
     
-    private var presentSignUpSceenButton: UIButton = {
+    let presentSignUpSceenButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign Up", for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 15)
-        button.setTitleColor(UIColor(red: 1.00, green: 0.79, blue: 0.24, alpha: 1.00), for: .normal)
+        button.setTitleColor(.systemYellow, for: .normal)
         return button
-    }()
-    
-    private var presentSignUpSceenStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.spacing = 10
-        stack.distribution = .equalCentering
-        return stack
     }()
     
     override func viewDidLoad() {
@@ -100,7 +95,7 @@ class SignInViewController: UIViewController {
         socialMediaButtonsStackView.addArrangedSubview(signInGoogleButton)
         
         signInContainerView.addSubview(presentSignUpSceenStackView)
-        presentSignUpSceenStackView.addArrangedSubview(alreadyHaveAccountTextLabel)
+        presentSignUpSceenStackView.addArrangedSubview(haveAccountTextLabel)
         presentSignUpSceenStackView.addArrangedSubview(presentSignUpSceenButton)
         
         view.updateConstraintsIfNeeded()
