@@ -19,7 +19,7 @@ class ForgotPasswordViewController: UIViewController {
         return label
     }()
     
-    let detaileForgotPassLabel = SecondaryLabel("Enter your email address to retrieve your password", fontSize: 14)
+    let detaileForgotPassLabel = SecondaryLabel("Enter your email address to\n retrieve your password", fontSize: 16)
     
     let emailTextField: CustomTextField = {
         let textField = CustomTextField()
@@ -27,6 +27,8 @@ class ForgotPasswordViewController: UIViewController {
         textField.placeholder = "E-mail"
         return textField
     }()
+    
+    var resetPassButton = CustomButton(title: "RESET PASSWORD")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,8 @@ class ForgotPasswordViewController: UIViewController {
         topImageContainerView.addSubview(forgotPassordImageView)
         view.addSubview(forgotPassLabel)
         view.addSubview(detaileForgotPassLabel)
+        view.addSubview(emailTextField)
+        view.addSubview(resetPassButton)
         view.setNeedsUpdateConstraints()
     }
     
@@ -60,6 +64,18 @@ class ForgotPasswordViewController: UIViewController {
         detaileForgotPassLabel.snp.makeConstraints { make in
             make.top.equalTo(forgotPassLabel.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
+        }
+        
+        emailTextField.snp.makeConstraints { make in
+            make.top.equalTo(detaileForgotPassLabel.snp.bottom).offset(30)
+            make.size.equalTo(CGSize(width: 260, height: 50))
+            make.centerX.equalToSuperview()
+        }
+        
+        resetPassButton.snp.makeConstraints { make in
+            make.top.equalTo(emailTextField.snp.bottom).offset(15)
+            make.centerX.equalTo(emailTextField.snp.centerX)
+            make.size.equalTo(emailTextField)
         }
         
         super.updateViewConstraints()
