@@ -43,8 +43,7 @@ class SignInViewController: UIViewController {
     let socialMediaButtonsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = 15
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         return stackView
     }()
     
@@ -55,14 +54,13 @@ class SignInViewController: UIViewController {
     let presentSignUpSceenStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = 10
-        stackView.distribution = .equalCentering
+        stackView.distribution = .equalSpacing
         return stackView
     }()
     
     let haveAccountTextLabel: BodyLabel = {
         let label = BodyLabel()
-        label.text = "Already have an account!"
+        label.text = "Already have an account! "
         label.textColor = .black
         return label
     }()
@@ -155,7 +153,9 @@ class SignInViewController: UIViewController {
         
         presentSignUpSceenStackView.snp.makeConstraints { make in
             make.top.equalTo(socialMediaButtonsStackView.snp.bottom).offset(15)
-            make.centerX.equalTo(signInContainerView.snp.centerX)
+            make.centerX.equalTo(socialMediaButtonsStackView.snp.centerX)
+            make.size.equalTo(socialMediaButtonsStackView)
+            
         }
         super.updateViewConstraints()
     }

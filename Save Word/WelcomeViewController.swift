@@ -15,7 +15,7 @@ class WelcomeViewController: UIViewController {
     let welcomeLabel = TitleLabel("Welcome!", fontSize: 36)
     let detaileLabel = BodyLabel("Log in with your data that you entered during Your registration.", fontSize: 18)
     let signUpButton = CustomButton(title: "Sign Up")
-    let signInLabel = BodyLabel("Already have an account!", fontSize: 15)
+    let signInLabel = BodyLabel("Already have an account! ", fontSize: 15)
     
     let signInButton: UIButton = {
         let button = UIButton()
@@ -28,7 +28,7 @@ class WelcomeViewController: UIViewController {
     let stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
-        stack.spacing = 4
+        stack.distribution = .equalCentering
         return stack
     }()
     
@@ -80,7 +80,7 @@ class WelcomeViewController: UIViewController {
         
         stackView.snp.makeConstraints { make in
             make.top.equalTo(signUpButton.snp.bottom).offset(12)
-            make.centerX.equalTo(view.snp.centerX)
+            make.centerX.equalTo(signUpButton)
         }
         super.updateViewConstraints()
     }
