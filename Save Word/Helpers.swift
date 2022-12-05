@@ -16,7 +16,7 @@ extension UITextField {
     iconContainerView.addSubview(iconView)
     leftView = iconContainerView
     leftViewMode = .always
-    self.tintColor = .lightGray
+    self.tintColor = .black
   }
 }
 
