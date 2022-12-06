@@ -9,14 +9,14 @@ import UIKit
 
 extension UITextField {
   func setLeftView(image: UIImage) {
-    let iconView = UIImageView(frame: CGRect(x: 14, y: 14, width: 17, height: 17)) // set your Own size
+    let iconView = UIImageView(frame: CGRect(x: 13, y: 13, width: 19, height: 19)) // set your Own size
       iconView.contentMode = .scaleAspectFit
     iconView.image = image
     let iconContainerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
     iconContainerView.addSubview(iconView)
     leftView = iconContainerView
     leftViewMode = .always
-    self.tintColor = .black
+      self.tintColor = .secondaryLabel //UIColor(red: 0.21, green: 0.21, blue: 0.21, alpha: 1.00)
   }
 }
 

@@ -58,9 +58,9 @@ class SignInViewController: UIViewController {
         return stackView
     }()
     
-    let haveAccountTextLabel: BodyLabel = {
+    let dontHaveAccountLabel: BodyLabel = {
         let label = BodyLabel()
-        label.text = "Already have an account! "
+        label.text = "Don’t have an account? "
         label.textColor = .black
         return label
     }()
@@ -93,7 +93,7 @@ class SignInViewController: UIViewController {
         socialMediaButtonsStackView.addArrangedSubview(signInGoogleButton)
         
         signInContainerView.addSubview(presentSignUpSceenStackView)
-        presentSignUpSceenStackView.addArrangedSubview(haveAccountTextLabel)
+        presentSignUpSceenStackView.addArrangedSubview(dontHaveAccountLabel)
         presentSignUpSceenStackView.addArrangedSubview(presentSignUpSceenButton)
         
         view.updateConstraintsIfNeeded()
