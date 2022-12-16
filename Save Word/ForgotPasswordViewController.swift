@@ -40,8 +40,7 @@ class ForgotPasswordViewController: UIViewController {
     }()
     
     var resetPasswordButton: CustomButton = {
-        let button = CustomButton(title: "RESET PASSWORD")
-        button.titleLabel?.font = .systemFont(ofSize: 13, weight: .bold)
+        let button = CustomButton(title: "Reset password")
         return button
     }()
 
