@@ -106,7 +106,7 @@
 				6041B8EE28C3BD6A00A19546 /* LaunchScreen.storyboard */,
 				6041B8F128C3BD6A00A19546 /* Info.plist */,
 				6041B8E928C3BD6700A19546 /* Favorite_Words.xcdatamodeld */,
-				60BA668D29216F5D00922E56 /* Helpers.swift */,
+				609E55FE293FC46100ECE20B /* Helpers */,
 			);
 			path = "Save Word";
 			sourceTree = "<group>";
@@ -119,6 +119,14 @@
 				60997246292C0299001208E7 /* SecondaryLabel.swift */,
 			);
 			path = Titles;
+			sourceTree = "<group>";
+		};
+		609E55FE293FC46100ECE20B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				60BA668D29216F5D00922E56 /* Helpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		60BA403F291D9EC400F9533C /* Custom Views */ = {

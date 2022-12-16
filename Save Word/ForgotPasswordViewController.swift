@@ -10,17 +10,22 @@ import SnapKit
 
 class ForgotPasswordViewController: UIViewController {
     
-    let topImageContainerView = UIView()
-    let forgotPassImageView = UIImageView(image: UIImage(named: "forgotPassword"))
-    let forgotPassContainerView = UIView()
+    let illustrationContainerView = UIView()
+    let illustrationImageView: UIImageView = {
+       let imageView = UIImageView(image: UIImage(named: "forgotPassword"))
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
     
-    var forgotPassLabel: TitleLabel = {
+    let bottonContainerView = UIView()
+    
+    var passwordLabel: TitleLabel = {
         let label = TitleLabel("Forgot your password?", fontSize: 21)
         label.textColor = .black
         return label
     }()
     
-    let detaileForgotPassLabel: SecondaryLabel = {
+    let detailePasswordLabel: SecondaryLabel = {
         let label = SecondaryLabel()
         label.text = "Enter your email address to\n retrieve your password"
         label.textAlignment = .center
@@ -29,14 +34,14 @@ class ForgotPasswordViewController: UIViewController {
     
     let emailTextField: CustomTextField = {
         let textField = CustomTextField()
-        textField.setLeftView(image: UIImage(systemName: "envelope")!)
+        textField.setLeftView(image: UIImage(systemName: "envelope.fill")!)
         textField.placeholder = "E-mail"
         return textField
     }()
     
-    var resetPassButton: CustomButton = {
+    var resetPasswordButton: CustomButton = {
         let button = CustomButton(title: "RESET PASSWORD")
-        button.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+        button.titleLabel?.font = .systemFont(ofSize: 13, weight: .bold)
         return button
     }()
 
@@ -44,57 +49,58 @@ class ForgotPasswordViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        view.addSubview(topImageContainerView)
-        topImageContainerView.addSubview(forgotPassImageView)
+        view.addSubview(illustrationContainerView)
+        illustrationContainerView.addSubview(illustrationImageView)
         
-        view.addSubview(forgotPassContainerView)
-        forgotPassContainerView.addSubview(forgotPassLabel)
-        forgotPassContainerView.addSubview(detaileForgotPassLabel)
-        forgotPassContainerView.addSubview(emailTextField)
-        forgotPassContainerView.addSubview(resetPassButton)
+        view.addSubview(bottonContainerView)
+        bottonContainerView.addSubview(passwordLabel)
+        bottonContainerView.addSubview(detailePasswordLabel)
+        bottonContainerView.addSubview(emailTextField)
+        bottonContainerView.addSubview(resetPasswordButton)
+        
         view.setNeedsUpdateConstraints()
     }
     
     override func updateViewConstraints() {
-        topImageContainerView.snp.makeConstraints { make in
+        illustrationContainerView.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(50)
             make.left.right.equalToSuperview()
             make.height.equalTo(view.snp.height).multipliedBy(0.5)
         }
         
-        forgotPassImageView.snp.makeConstraints { make in
-            make.center.equalTo(topImageContainerView.snp.center)
-            make.size.equalTo(CGSize(width: 303, height: 389))
+        illustrationImageView.snp.makeConstraints { make in
+            make.center.equalTo(illustrationContainerView.snp.center)
+            make.size.equalTo(illustrationContainerView).multipliedBy(0.9)
         }
         
-        forgotPassContainerView.snp.makeConstraints { make in
-            make.top.equalTo(topImageContainerView.snp.bottom)
+        bottonContainerView.snp.makeConstraints { make in
+            make.top.equalTo(illustrationContainerView.snp.bottom)
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(view.snp.bottom)
-            make.height.equalTo(view.snp.height).multipliedBy(0.5)
         }
         
-        forgotPassLabel.snp.makeConstraints { make in
-            make.top.equalTo(forgotPassContainerView).offset(90)
+        passwordLabel.snp.makeConstraints { make in
+            make.top.equalTo(bottonContainerView.snp.top).offset(20)
             make.centerX.equalToSuperview()
         }
         
-        detaileForgotPassLabel.snp.makeConstraints { make in
-            make.top.equalTo(forgotPassLabel.snp.bottom).offset(15)
+        detailePasswordLabel.snp.makeConstraints { make in
+            make.top.equalTo(passwordLabel.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
         }
         
         emailTextField.snp.makeConstraints { make in
-            make.top.equalTo(detaileForgotPassLabel.snp.bottom).offset(20)
-            make.size.equalTo(CGSize(width: 260, height: 50))
-            make.centerX.equalToSuperview()
+            make.top.equalTo(detailePasswordLabel.snp.bottom).offset(20)
+            make.left.equalTo(bottonContainerView.snp.left).offset(40)
+            make.right.equalTo(bottonContainerView.snp.right).offset(-40)
+            make.height.equalTo(53)
         }
         
-        resetPassButton.snp.makeConstraints { make in
+        resetPasswordButton.snp.makeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).offset(15)
             make.centerX.equalTo(emailTextField.snp.centerX)
             make.size.equalTo(emailTextField)
         }
+        
         super.updateViewConstraints()
     }  
 }

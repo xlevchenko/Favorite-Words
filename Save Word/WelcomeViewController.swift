@@ -74,8 +74,9 @@ class WelcomeViewController: UIViewController {
         
         signUpButton.snp.makeConstraints { make in
             make.top.equalTo(detaileLabel.snp.bottom).offset(25)
-            make.centerX.equalTo(view.snp.centerX)
-            make.size.equalTo(CGSize(width: 280, height: 50))
+            make.left.equalTo(view.snp.left).offset(40)
+            make.right.equalTo(view.snp.right).offset(-40)
+            make.height.equalTo(50)
         }
         
         stackView.snp.makeConstraints { make in
