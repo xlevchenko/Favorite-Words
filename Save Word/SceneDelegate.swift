@@ -17,7 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = DisplayNameViewController()
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        window?.rootViewController = AboutAppCollectionViewController(collectionViewLayout: layout)
         window?.makeKeyAndVisible()
     }
 
