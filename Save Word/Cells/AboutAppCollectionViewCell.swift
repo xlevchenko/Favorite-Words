@@ -30,14 +30,18 @@ class AboutAppCollectionViewCell: UICollectionViewCell {
     
     private let headerTextLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 18)
+        label.font = .boldSystemFont(ofSize: 24)
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     
     private let discriptionText: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 13)
+        label.font = .systemFont(ofSize: 18)
         label.textColor = .gray
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     
@@ -60,7 +64,7 @@ class AboutAppCollectionViewCell: UICollectionViewCell {
     
     override func updateConstraints() {
         topImageContainerView.snp.makeConstraints { make in
-            make.top.equalTo(snp.top)
+            make.top.equalTo(snp.top).offset(15)
             make.left.equalTo(snp.left)
             make.right.equalTo(snp.right)
             make.height.equalTo(snp.height).multipliedBy(0.5)
@@ -79,10 +83,9 @@ class AboutAppCollectionViewCell: UICollectionViewCell {
         }
         
         discriptionText.snp.makeConstraints { make in
-            make.top.equalTo(headerTextLabel.snp.bottom)
+            make.top.equalTo(headerTextLabel.snp.bottom).offset(10)
             make.left.equalTo(snp.left).offset(24)
             make.right.equalTo(snp.right).offset(-24)
-            make.bottom.equalTo(snp.bottom).offset(0)
         }
         super.updateConstraints()
     }
