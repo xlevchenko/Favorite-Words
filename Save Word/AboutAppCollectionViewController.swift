@@ -33,11 +33,15 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         return button
     }()
     
-    @objc func handlePrev() {
+    @objc func handlePrevButton() {
         let nextIndex = max(pageControl.currentPage - 1, 0)
         let indexPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        if indexPath.item != 2 {
+            nextButton.setTitle("NEXT", for: .normal)
+            nextButton.setTitleColor(.black, for: .normal)
+        }
     }
     
     private lazy var pageControl: UIPageControl = {
@@ -58,11 +62,16 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         return button
     }()
     
-    @objc func handleNext() {
+    @objc func handleNextButton() {
         let nextIndex = min(pageControl.currentPage + 1, pages.count - 1)
         let indextPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex
         collectionView.scrollToItem(at: indextPath, at: .centeredHorizontally, animated: true)
+        if indextPath.item == 2 {
+            nextButton.setTitle("START!", for: .normal)
+            nextButton.setTitleColor(UIColor(red: 0.43, green: 0.38, blue: 0.98, alpha: 1.00), for: .normal)
+            nextButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .heavy)
+         }
     }
     
     lazy var scrollButtonsStackView: UIStackView = {
@@ -81,8 +90,8 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         self.collectionView!.register(AboutAppCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.isPagingEnabled = true
         
-        nextButton.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
-        prevButton.addTarget(self, action: #selector(handlePrev), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(handleNextButton), for: .touchUpInside)
+        prevButton.addTarget(self, action: #selector(handlePrevButton), for: .touchUpInside)
         
         view.addSubview(scrollButtonsStackView)
         view.setNeedsUpdateConstraints()
