@@ -26,7 +26,7 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
     
     private let prevButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("PREV", for: .normal)
+        button.setTitle("", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.gray, for: .normal)
         //button.addTarget(self, action: #selector(handlePrev), for: .touchUpInside)
@@ -38,9 +38,11 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         let indexPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        if indexPath.item != 2 {
+        if indexPath.item != 2 && indexPath.item != 0 {
             nextButton.setTitle("NEXT", for: .normal)
             nextButton.setTitleColor(.black, for: .normal)
+        } else if indexPath.item == 0 {
+            prevButton.setTitle("", for: .normal)
         }
     }
     
@@ -64,14 +66,17 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
     
     @objc func handleNextButton() {
         let nextIndex = min(pageControl.currentPage + 1, pages.count - 1)
-        let indextPath = IndexPath(item: nextIndex, section: 0)
+        let indexPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex
-        collectionView.scrollToItem(at: indextPath, at: .centeredHorizontally, animated: true)
-        if indextPath.item == 2 {
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        if indexPath.item == 2 {
             nextButton.setTitle("START!", for: .normal)
             nextButton.setTitleColor(UIColor(red: 0.43, green: 0.38, blue: 0.98, alpha: 1.00), for: .normal)
             nextButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .heavy)
-         }
+        }  else if indexPath.item > 0 {
+            prevButton.setTitle("PREV", for: .normal)
+        }
+    
     }
     
     lazy var scrollButtonsStackView: UIStackView = {
