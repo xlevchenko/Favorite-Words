@@ -7,15 +7,19 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 private let cellIdentifier = "AboutAppCell"
 
 class AboutAppCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    private var cancellables = Set<AnyCancellable>()
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate { _ in
             self.collectionViewLayout.invalidateLayout()
             if self.pageControl.currentPage == 0 {
+                //self.prevButton.setTitle("", for: .normal)
                 self.collectionView.contentOffset = .zero
             } else {
                 let indexPath = IndexPath(item: self.pageControl.currentPage, section: 0)
@@ -88,6 +92,20 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
     override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let x = targetContentOffset.pointee.x
         pageControl.currentPage = Int(x / view.frame.width)
+        
+        switch pageControl.currentPage {
+        case 0:
+            prevButton.setTitle("", for: .normal)
+            nextButton.setTitle("NEXT", for: .normal)
+        case 1:
+            prevButton.setTitle("PREV", for: .normal)
+            nextButton.setTitle("NEXT", for: .normal)
+        case 2:
+            prevButton.setTitle("PREV", for: .normal)
+            nextButton.setTitle("START!", for: .normal)
+        default:
+            break
+        }
     }
     
     override func viewDidLoad() {
