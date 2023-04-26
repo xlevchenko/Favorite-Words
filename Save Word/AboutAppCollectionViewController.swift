@@ -13,7 +13,7 @@ private let cellIdentifier = "AboutAppCell"
 
 class AboutAppCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    private var cancellables = Set<AnyCancellable>()
+    var aboutAppModel = AboutAppModel()
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate { _ in
@@ -42,12 +42,7 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         let indexPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        if indexPath.item != 2 && indexPath.item != 0 {
-            nextButton.setTitle("NEXT", for: .normal)
-            nextButton.setTitleColor(.black, for: .normal)
-        } else if indexPath.item == 0 {
-            prevButton.setTitle("", for: .normal)
-        }
+        updateButtonState(page: indexPath.item)
     }
     
     private lazy var pageControl: UIPageControl = {
@@ -73,14 +68,7 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         let indexPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        if indexPath.item == 2 {
-            nextButton.setTitle("START!", for: .normal)
-            nextButton.setTitleColor(UIColor(red: 0.43, green: 0.38, blue: 0.98, alpha: 1.00), for: .normal)
-            nextButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .heavy)
-        }  else if indexPath.item > 0 {
-            prevButton.setTitle("PREV", for: .normal)
-        }
-    
+        updateButtonState(page: indexPath.item)
     }
     
     lazy var scrollButtonsStackView: UIStackView = {
@@ -92,32 +80,7 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
     override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let x = targetContentOffset.pointee.x
         pageControl.currentPage = Int(x / view.frame.width)
-        
-        switch pageControl.currentPage {
-        case 0:
-            prevButton.setTitle("", for: .normal)
-            nextButton.setTitle("NEXT", for: .normal)
-        case 1:
-            prevButton.setTitle("PREV", for: .normal)
-            nextButton.setTitle("NEXT", for: .normal)
-        case 2:
-            prevButton.setTitle("PREV", for: .normal)
-            nextButton.setTitle("START!", for: .normal)
-        default:
-            break
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.collectionView!.register(AboutAppCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
-        collectionView.isPagingEnabled = true
-        
-        nextButton.addTarget(self, action: #selector(handleNextButton), for: .touchUpInside)
-        prevButton.addTarget(self, action: #selector(handlePrevButton), for: .touchUpInside)
-        
-        view.addSubview(scrollButtonsStackView)
-        view.setNeedsUpdateConstraints()
+        updateButtonState(page: pageControl.currentPage)
     }
     
     let pages = [
@@ -125,14 +88,32 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         AboutAppPage(imageName: "AboutAppImage2", headerText: "Learn new words", bodyText: "Study the word at a time convenient for you. Make the process more interesting with the Quiz game."),
         AboutAppPage(imageName: "AboutAppImage3", headerText: "Pronounce the words correctly", bodyText: "Learn to speak correctly and beautifully. Listen to the speech of the words of the audio assistant and repeat after him.")
     ]
-
+    
+    func updateButtonState(page: Int) {
+        switch page {
+        case 0:
+            prevButton.setTitle("", for: .normal)
+            nextButton.setTitle("NEXT", for: .normal)
+            nextButton.setTitleColor(.black, for: .normal)
+        case 1:
+            prevButton.setTitle("PREV", for: .normal)
+            nextButton.setTitle("NEXT", for: .normal)
+            nextButton.setTitleColor(.black, for: .normal)
+        case 2:
+            prevButton.setTitle("PREV", for: .normal)
+            nextButton.setTitle("START!", for: .normal)
+            nextButton.setTitleColor(.red, for: .normal)
+        default:
+            break
+        }
+    }
     
     // MARK: UICollectionViewDataSource
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pages.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AboutAppCollectionViewCell
         let pages = pages[indexPath.item]
@@ -159,5 +140,16 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
             make.height.equalTo(50)
         }
         super.updateViewConstraints()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.collectionView!.register(AboutAppCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.isPagingEnabled = true
+        
+        nextButton.addTarget(self, action: #selector(handleNextButton), for: .touchUpInside)
+        prevButton.addTarget(self, action: #selector(handlePrevButton), for: .touchUpInside)
+        view.addSubview(scrollButtonsStackView)
+        view.setNeedsUpdateConstraints()
     }
 }

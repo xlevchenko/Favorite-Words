@@ -20,6 +20,7 @@
 		6086B22E290C34DF00FA85C5 /* SWTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086B22D290C34DF00FA85C5 /* SWTabBarController.swift */; };
 		608852FC294C617000BC0CC0 /* DisplayNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608852FB294C616F00BC0CC0 /* DisplayNameViewController.swift */; };
 		60932280293DE49400A96F11 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6093227F293DE49400A96F11 /* SignUpViewController.swift */; };
+		609913B829963E08000F8104 /* AboutAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609913B729963E08000F8104 /* AboutAppModel.swift */; };
 		60997243292C024B001208E7 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60997242292C024B001208E7 /* TitleLabel.swift */; };
 		60997245292C026A001208E7 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60997244292C026A001208E7 /* BodyLabel.swift */; };
 		60997247292C0299001208E7 /* SecondaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60997246292C0299001208E7 /* SecondaryLabel.swift */; };
@@ -48,6 +49,7 @@
 		6086B22D290C34DF00FA85C5 /* SWTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTabBarController.swift; sourceTree = "<group>"; };
 		608852FB294C616F00BC0CC0 /* DisplayNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayNameViewController.swift; sourceTree = "<group>"; };
 		6093227F293DE49400A96F11 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		609913B729963E08000F8104 /* AboutAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppModel.swift; sourceTree = "<group>"; };
 		60997242292C024B001208E7 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		60997244292C026A001208E7 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
 		60997246292C0299001208E7 /* SecondaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryLabel.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				609B53362938D58F006FA178 /* ForgotPasswordViewController.swift */,
 				608852FB294C616F00BC0CC0 /* DisplayNameViewController.swift */,
 				6017114E296B686900316ECA /* AboutAppCollectionViewController.swift */,
+				609913B729963E08000F8104 /* AboutAppModel.swift */,
 				60171155296B6AF500316ECA /* Cells */,
 				60171152296B6A8100316ECA /* Models */,
 				60BA403F291D9EC400F9533C /* Custom Views */,
@@ -321,6 +324,7 @@
 				60BA668E29216F5D00922E56 /* Helpers.swift in Sources */,
 				60BA668C292146DC00922E56 /* SignInViewController.swift in Sources */,
 				60DE659F29198A5C00F5E115 /* WelcomeViewController.swift in Sources */,
+				609913B829963E08000F8104 /* AboutAppModel.swift in Sources */,
 				60171154296B6AE100316ECA /* AboutAppCollectionViewCell.swift in Sources */,
 				60932280293DE49400A96F11 /* SignUpViewController.swift in Sources */,
 				6041B8E128C3BD6700A19546 /* AppDelegate.swift in Sources */,
