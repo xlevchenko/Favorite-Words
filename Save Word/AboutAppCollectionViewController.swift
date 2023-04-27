@@ -11,6 +11,12 @@ import Combine
 
 private let cellIdentifier = "AboutAppCell"
 
+enum PageAboutApp: Int, CaseIterable {
+    case one = 0
+    case two
+    case tree
+}
+
 class AboutAppCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var aboutAppModel = AboutAppModel()
@@ -68,7 +74,7 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         let indexPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        updateButtonState(page: indexPath.item)
+        updateButtonState(page: pageControl.currentPage)
     }
     
     lazy var scrollButtonsStackView: UIStackView = {
@@ -89,7 +95,7 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         AboutAppPage(imageName: "AboutAppImage3", headerText: "Pronounce the words correctly", bodyText: "Learn to speak correctly and beautifully. Listen to the speech of the words of the audio assistant and repeat after him.")
     ]
     
-    func updateButtonState(page: Int) {
+    func updateButtonState(page: PageAboutApp.RawValue) {
         switch page {
         case 0:
             prevButton.setTitle("", for: .normal)
@@ -107,6 +113,7 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
             break
         }
     }
+    
     
     // MARK: UICollectionViewDataSource
     
