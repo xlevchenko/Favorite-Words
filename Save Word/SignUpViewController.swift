@@ -8,7 +8,7 @@ import UIKit
 import SnapKit
 
 class SignUpViewController: UIViewController {
-   
+    
     let logoContainerView = UIView()
     
     let logoImageView: UIImageView = {
@@ -54,7 +54,7 @@ class SignUpViewController: UIViewController {
     let signUpSocialMediaTextLabel = SecondaryLabel("OR", fontSize: 10)
     let signUpFacebookButton = UIButton(image: UIImage(named: "Facebook 1")!)
     let signUpGoogleButton = UIButton(image: UIImage(named: "Google 1")!)
-   
+    
     lazy var socialMediaButtonsStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [signUpFacebookButton, signUpGoogleButton])
         stackView.axis = .horizontal
@@ -106,8 +106,25 @@ class SignUpViewController: UIViewController {
         signUpContainerView.addSubview(signUpSocialMediaTextLabel)
         signUpContainerView.addSubview(socialMediaButtonsStackView)
         signUpContainerView.addSubview(showSignInSceenStackView)
-
+        
         view.updateConstraintsIfNeeded()
+        
+        signUpButton.addTarget(self, action: #selector(showSWTabBarScreen), for: .touchUpInside)
+        showSignUpSceenButton.addTarget(self, action: #selector(showSignInScreen), for: .touchUpInside)
+    }
+    
+    @objc func showSWTabBarScreen() {
+        let destination = SWTabBarController()
+        let navigationController = UINavigationController(rootViewController: destination)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true)
+    }
+    
+    @objc func showSignInScreen() {
+        let signInViewController = SignInViewController()
+        let navigationController = UINavigationController(rootViewController: signInViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true)
     }
     
     override func updateViewConstraints() {

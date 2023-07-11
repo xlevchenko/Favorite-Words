@@ -24,7 +24,7 @@ class SWTabBarController: UITabBarController {
     
 
     func createHomeNavController() -> UINavigationController {
-        let homeVC = ViewController()
+        let homeVC = HomeViewController()
         homeVC.title = "Home"
         homeVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "home"), tag: 0)
         return UINavigationController(rootViewController: homeVC)

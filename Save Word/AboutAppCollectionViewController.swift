@@ -98,7 +98,7 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
     func updateButtonState(page: PageAboutApp.RawValue) {
         switch page {
         case 0:
-            prevButton.setTitle("", for: .normal)
+            prevButton.removeFromSuperview()
             nextButton.setTitle("NEXT", for: .normal)
             nextButton.setTitleColor(.black, for: .normal)
         case 1:
@@ -108,7 +108,7 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         case 2:
             prevButton.setTitle("PREV", for: .normal)
             nextButton.setTitle("START!", for: .normal)
-            nextButton.setTitleColor(.red, for: .normal)
+            //nextButton.setTitleColor(.red, for: .normal)
         default:
             break
         }

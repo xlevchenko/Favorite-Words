@@ -15,7 +15,7 @@ class SignInViewController: UIViewController {
     let signInContainerView = UIView(cornerRadius: 59, backgroundColor: .white)
     
     var signInSceenLabel: TitleLabel = {
-        let label = TitleLabel("Sign Up", fontSize: 30)
+        let label = TitleLabel("Sign In", fontSize: 30)
         label.font = .systemFont(ofSize: 30, weight: .heavy)
         label.textColor = .black
         return label
@@ -99,8 +99,25 @@ class SignInViewController: UIViewController {
         signInContainerView.addSubview(showSignUpSceenStackView)
         
         view.updateConstraintsIfNeeded()
+        
+        signInButton.addTarget(self, action: #selector(showSWTabBarScreen), for: .touchUpInside)
+        showSignUpSceenButton.addTarget(self, action: #selector(showSignUpScreen), for: .touchUpInside)
     }
     
+    @objc func showSWTabBarScreen() {
+        let destination = SWTabBarController()
+        let navigationController = UINavigationController(rootViewController: destination)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true)
+    }
+    
+    @objc func showSignUpScreen() {
+        let destination = SignUpViewController()
+        let navigationController = UINavigationController(rootViewController: destination)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true)
+    }
+
     override func updateViewConstraints() {
         logoContainerView.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(40)
