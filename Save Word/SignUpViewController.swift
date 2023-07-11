@@ -164,6 +164,7 @@ class SignUpViewController: UIViewController {
             make.size.equalTo(emailTextField)
         }
         
+        
         repeatPasswordTextField.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(10)
             make.left.right.equalTo(passwordTextField)
