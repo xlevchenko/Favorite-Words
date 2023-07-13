@@ -45,7 +45,6 @@ class ProfileStatusView: UIView {
         addSubview(statusLabel)
         addSubview(statusImageView)
         addSubview(newNotificationButton)
-        //test12
     }
     
     override func layoutSubviews() {
@@ -85,7 +84,7 @@ class ProfileStatusView: UIView {
         }
         
         newNotificationButton.snp.makeConstraints { make in
-            make.left.equalTo(nameProfileLabel.snp.right).offset(20)
+            make.right.equalTo(snp.right).offset(-20)
             make.centerY.equalToSuperview()
         }
         
