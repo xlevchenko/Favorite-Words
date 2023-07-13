@@ -45,7 +45,7 @@ class ProfileStatusView: UIView {
         addSubview(statusLabel)
         addSubview(statusImageView)
         addSubview(newNotificationButton)
-        //test1
+        //test12
     }
     
     override func layoutSubviews() {
