@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D1ACCD3D686FABADC6F77A5 /* Pods_Save_Word.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C34F74D5A2C8698BBC58259 /* Pods_Save_Word.framework */; };
 		6017114F296B686900316ECA /* AboutAppCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6017114E296B686900316ECA /* AboutAppCollectionViewController.swift */; };
 		60171151296B69AE00316ECA /* AboutAppPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60171150296B69AE00316ECA /* AboutAppPage.swift */; };
 		60171154296B6AE100316ECA /* AboutAppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60171153296B6AE100316ECA /* AboutAppCollectionViewCell.swift */; };
 		603648472A5C92730096BE02 /* ProfileStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603648462A5C92730096BE02 /* ProfileStatusView.swift */; };
-		6036484D2A5C953E0096BE02 /* SFProMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6036484C2A5C953E0096BE02 /* SFProMedium.otf */; };
-		6036484F2A5C96950096BE02 /* SFProRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6036484E2A5C96950096BE02 /* SFProRegular.otf */; };
 		6041B8E128C3BD6700A19546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E028C3BD6700A19546 /* AppDelegate.swift */; };
 		6041B8E328C3BD6700A19546 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E228C3BD6700A19546 /* SceneDelegate.swift */; };
 		6041B8E528C3BD6700A19546 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E428C3BD6700A19546 /* HomeViewController.swift */; };
@@ -23,12 +20,14 @@
 		6086B22E290C34DF00FA85C5 /* SWTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086B22D290C34DF00FA85C5 /* SWTabBarController.swift */; };
 		608852FC294C617000BC0CC0 /* DisplayNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608852FB294C616F00BC0CC0 /* DisplayNameViewController.swift */; };
 		60932280293DE49400A96F11 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6093227F293DE49400A96F11 /* SignUpViewController.swift */; };
+		6095BE0B2A61E93800785BE8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6095BE0A2A61E93800785BE8 /* SnapKit */; };
 		609913B829963E08000F8104 /* AboutAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609913B729963E08000F8104 /* AboutAppModel.swift */; };
 		60997243292C024B001208E7 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60997242292C024B001208E7 /* TitleLabel.swift */; };
 		60997245292C026A001208E7 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60997244292C026A001208E7 /* BodyLabel.swift */; };
 		60997247292C0299001208E7 /* SecondaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60997246292C0299001208E7 /* SecondaryLabel.swift */; };
 		609B53372938D58F006FA178 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B53362938D58F006FA178 /* ForgotPasswordViewController.swift */; };
 		609D510D2A608DA6002335A4 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609D510C2A608DA6002335A4 /* DashboardView.swift */; };
+		609D51102A61E565002335A4 /* ALProgressView in Frameworks */ = {isa = PBXBuildFile; productRef = 609D510F2A61E565002335A4 /* ALProgressView */; };
 		60BA668C292146DC00922E56 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA668B292146DC00922E56 /* SignInViewController.swift */; };
 		60BA668E29216F5D00922E56 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA668D29216F5D00922E56 /* Helpers.swift */; };
 		60BA66912921778400922E56 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA66902921778400922E56 /* CustomTextField.swift */; };
@@ -37,14 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C34F74D5A2C8698BBC58259 /* Pods_Save_Word.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_Word.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F0DA2576079B94853850F0C /* Pods-Save Word.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save Word.debug.xcconfig"; path = "Target Support Files/Pods-Save Word/Pods-Save Word.debug.xcconfig"; sourceTree = "<group>"; };
 		6017114E296B686900316ECA /* AboutAppCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppCollectionViewController.swift; sourceTree = "<group>"; };
 		60171150296B69AE00316ECA /* AboutAppPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppPage.swift; sourceTree = "<group>"; };
 		60171153296B6AE100316ECA /* AboutAppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppCollectionViewCell.swift; sourceTree = "<group>"; };
 		603648462A5C92730096BE02 /* ProfileStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusView.swift; sourceTree = "<group>"; };
-		6036484C2A5C953E0096BE02 /* SFProMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProMedium.otf; sourceTree = "<group>"; };
-		6036484E2A5C96950096BE02 /* SFProRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProRegular.otf; sourceTree = "<group>"; };
 		6041B8DD28C3BD6700A19546 /* Save Word.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Save Word.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6041B8E028C3BD6700A19546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6041B8E228C3BD6700A19546 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +62,6 @@
 		60BA66902921778400922E56 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		60DBB541291D961600D4DB35 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		60DE659E29198A5C00F5E115 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		D91E62DD3F1304408EB40DFE /* Pods-Save Word.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save Word.release.xcconfig"; path = "Target Support Files/Pods-Save Word/Pods-Save Word.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,21 +69,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D1ACCD3D686FABADC6F77A5 /* Pods_Save_Word.framework in Frameworks */,
+				609D51102A61E565002335A4 /* ALProgressView in Frameworks */,
+				6095BE0B2A61E93800785BE8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B6E1F5E6E771B47DD8B58B8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1C34F74D5A2C8698BBC58259 /* Pods_Save_Word.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		60171152296B6A8100316ECA /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,8 +113,6 @@
 		603648492A5C94E40096BE02 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				6036484C2A5C953E0096BE02 /* SFProMedium.otf */,
-				6036484E2A5C96950096BE02 /* SFProRegular.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -137,8 +122,6 @@
 			children = (
 				6041B8DF28C3BD6700A19546 /* Save Word */,
 				6041B8DE28C3BD6700A19546 /* Products */,
-				F34CA9349F88D4891288077A /* Pods */,
-				2B6E1F5E6E771B47DD8B58B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,15 +205,6 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
-		F34CA9349F88D4891288077A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4F0DA2576079B94853850F0C /* Pods-Save Word.debug.xcconfig */,
-				D91E62DD3F1304408EB40DFE /* Pods-Save Word.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -238,17 +212,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6041B8F428C3BD6A00A19546 /* Build configuration list for PBXNativeTarget "Save Word" */;
 			buildPhases = (
-				0898C1D792D5E0807A25C842 /* [CP] Check Pods Manifest.lock */,
 				6041B8D928C3BD6700A19546 /* Sources */,
 				6041B8DA28C3BD6700A19546 /* Frameworks */,
 				6041B8DB28C3BD6700A19546 /* Resources */,
-				ADED52B0238E6F187FB86E67 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Save Word";
+			packageProductDependencies = (
+				609D510F2A61E565002335A4 /* ALProgressView */,
+				6095BE0A2A61E93800785BE8 /* SnapKit */,
+			);
 			productName = "Favorite Words";
 			productReference = 6041B8DD28C3BD6700A19546 /* Save Word.app */;
 			productType = "com.apple.product-type.application";
@@ -277,6 +253,10 @@
 				Base,
 			);
 			mainGroup = 6041B8D428C3BD6700A19546;
+			packageReferences = (
+				609D510E2A61E565002335A4 /* XCRemoteSwiftPackageReference "ALProgressView" */,
+				6095BE092A61E93800785BE8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 6041B8DE28C3BD6700A19546 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -293,54 +273,10 @@
 			files = (
 				6041B8F028C3BD6A00A19546 /* LaunchScreen.storyboard in Resources */,
 				6041B8ED28C3BD6A00A19546 /* Assets.xcassets in Resources */,
-				6036484F2A5C96950096BE02 /* SFProRegular.otf in Resources */,
-				6036484D2A5C953E0096BE02 /* SFProMedium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0898C1D792D5E0807A25C842 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Save Word-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ADED52B0238E6F187FB86E67 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Save Word/Pods-Save Word-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Save Word/Pods-Save Word-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Save Word/Pods-Save Word-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6041B8D928C3BD6700A19546 /* Sources */ = {
@@ -502,7 +438,6 @@
 		};
 		6041B8F528C3BD6A00A19546 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F0DA2576079B94853850F0C /* Pods-Save Word.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -536,7 +471,6 @@
 		};
 		6041B8F628C3BD6A00A19546 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D91E62DD3F1304408EB40DFE /* Pods-Save Word.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -590,6 +524,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6095BE092A61E93800785BE8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		609D510E2A61E565002335A4 /* XCRemoteSwiftPackageReference "ALProgressView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alxrguz/ALProgressView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6095BE0A2A61E93800785BE8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6095BE092A61E93800785BE8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		609D510F2A61E565002335A4 /* ALProgressView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 609D510E2A61E565002335A4 /* XCRemoteSwiftPackageReference "ALProgressView" */;
+			productName = ALProgressView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6041B8E928C3BD6700A19546 /* Favorite_Words.xcdatamodeld */ = {

@@ -13,7 +13,7 @@ class ProfileStatusView: UIView {
     let nameProfileLabel: UILabel = {
         let label = UILabel()
         label.text = "Olexsii Levchenko"
-        label.font = UIFont(name: "SFProMedium", size: 15)
+        label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textColor = .white
         return label
     }()
@@ -21,7 +21,7 @@ class ProfileStatusView: UIView {
     let statusLabel: UILabel = {
         let label = UILabel()
         label.text = "Premium"
-        label.font = UIFont(name: "SFProRegular", size: 13)
+        label.font = .systemFont(ofSize: 14, weight: .regular)
         label.textColor = .white
         return label
     }()
