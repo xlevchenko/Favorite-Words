@@ -13,11 +13,63 @@ class DashboardView: UIView {
     
     private lazy var progressRing = ALProgressRing()
     
-    
     let progressLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .heavy)
-        label.text = "100%"
+        label.text = "83%"
+        return label
+    }()
+    
+    let dashboardLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 22, weight: .black)
+        label.text = "Dashboard:"
+        return label
+    }()
+    
+    let setOvalImageView = UIImageView(image: UIImage(named: "GreenOval"))
+    let wordsOvalImageView = UIImageView(image: UIImage(named: "PurpureOval"))
+    let learnedOvalImageView = UIImageView(image: UIImage(named: "YellowOval"))
+    
+    let titleSetsListsLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.text = "Sets"
+        return label
+    }()
+    
+    let titleWordsLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.text = "Words"
+        return label
+    }()
+    
+    let titleLearnedWordsLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.text = "Learned"
+        return label
+    }()
+    
+    let setsListsCountLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .medium)
+        label.text = "53"
+        return label
+    }()
+     
+    let allWordsCountLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .medium)
+        label.text = "124"
+        return label
+    }()
+    
+    let learnedWordsCountLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .medium)
+        label.text = "32"
         return label
     }()
 
@@ -35,6 +87,16 @@ class DashboardView: UIView {
     func addView() {
         addSubview(progressRing)
         addSubview(progressLabel)
+        addSubview(dashboardLabel)
+        addSubview(setOvalImageView)
+        addSubview(wordsOvalImageView)
+        addSubview(learnedOvalImageView)
+        addSubview(titleSetsListsLabel)
+        addSubview(titleWordsLabel)
+        addSubview(titleLearnedWordsLabel)
+        addSubview(setsListsCountLabel)
+        addSubview(allWordsCountLabel)
+        addSubview(learnedWordsCountLabel)
     }
     
     func congigure() {
@@ -69,6 +131,57 @@ class DashboardView: UIView {
                 make.centerX.equalTo(progressRing.snp.centerX)
                 make.centerY.equalTo(progressRing.snp.centerY)
             }
+        
+        dashboardLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.snp.top).offset(20)
+            make.left.equalTo(progressRing.snp.right).offset(35)
+        }
+        
+        setOvalImageView.snp.makeConstraints { make in
+            make.top.equalTo(dashboardLabel.snp.bottom).offset(10)
+            make.left.equalTo(dashboardLabel.snp.left)
+        }
+        
+        
+        wordsOvalImageView.snp.makeConstraints { make in
+            make.top.equalTo(setOvalImageView.snp.bottom).offset(10)
+            make.left.equalTo(dashboardLabel.snp.left)
+        }
+        
+        learnedOvalImageView.snp.makeConstraints { make in
+            make.top.equalTo(wordsOvalImageView.snp.bottom).offset(10)
+            make.left.equalTo(dashboardLabel.snp.left)
+        }
+        
+        titleSetsListsLabel.snp.makeConstraints { make in
+            make.left.equalTo(setOvalImageView.snp.right).offset(8)
+            make.centerY.equalTo(setOvalImageView.snp.centerY)
+        }
+        
+        titleWordsLabel.snp.makeConstraints { make in
+            make.left.equalTo(wordsOvalImageView.snp.right).offset(8)
+            make.centerY.equalTo(wordsOvalImageView.snp.centerY)
+        }
+        
+        titleLearnedWordsLabel.snp.makeConstraints { make in
+            make.left.equalTo(learnedOvalImageView.snp.right).offset(8)
+            make.centerY.equalTo(learnedOvalImageView.snp.centerY)
+        }
+        
+        setsListsCountLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleSetsListsLabel.snp.top)
+            make.left.equalTo(dashboardLabel.snp.right).offset(-15)
+        }
+        
+        allWordsCountLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleWordsLabel.snp.top)
+            make.left.equalTo(setsListsCountLabel.snp.left)
+        }
+        
+        learnedWordsCountLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLearnedWordsLabel.snp.top)
+            make.left.equalTo(setsListsCountLabel.snp.left)
+        }
         
         super.updateConstraints()
     }

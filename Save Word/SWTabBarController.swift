@@ -12,8 +12,8 @@ class SWTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UITabBar.appearance().tintColor =  UIColor(red: 0.24, green: 0.60, blue: 0.82, alpha: 1.00)
-
+        UITabBar.appearance().tintColor = #colorLiteral(red: 0.3681200445, green: 0.1824620366, blue: 0.9034458399, alpha: 1)
+        //UITabBar.appearance().
         viewControllers = [
             createHomeNavController(),
             createAddListWordNavController(),
