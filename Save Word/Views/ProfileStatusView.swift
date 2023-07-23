@@ -10,6 +10,7 @@ import SnapKit
 
 class ProfileStatusView: UIView {
     
+    /// Full name for profile file
     let nameProfileLabel: UILabel = {
         let label = UILabel()
         label.text = "Olexsii Levchenko"

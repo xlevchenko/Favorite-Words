@@ -79,7 +79,7 @@ class HomeViewController: UIViewController {
         }
         
         profileStatusView.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.top).offset(0)
+            make.top.equalTo(contentView.safeAreaLayoutGuide.snp.top).offset(15)
             make.left.equalTo(contentView.snp.left).offset(20)
             make.height.equalTo(63)
         }
@@ -103,7 +103,7 @@ class HomeViewController: UIViewController {
             make.left.equalTo(contentView.snp.left).offset(20)
             make.right.equalTo(contentView.snp.right).offset(-20)
             make.bottom.equalTo(contentView.snp.bottom).offset(-20)
-            make.height.equalTo(430)
+            make.height.equalTo(410)
         }
         
         super.updateViewConstraints()

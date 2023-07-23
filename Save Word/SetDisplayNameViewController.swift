@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SnapKit
 
-class DisplayNameViewController: UIViewController {
+class SetDisplayNameViewController: UIViewController {
     
     let backgraundImageView: UIImageView = {
        let imageView = UIImageView(image: UIImage(named: "backgroundName"))
@@ -25,7 +26,7 @@ class DisplayNameViewController: UIViewController {
     }()
     
     let secondaryDisplayNameLabel: SecondaryLabel = {
-        let label = SecondaryLabel("Enter your display name to start\nusing the app 😊.", fontSize: 17)
+        let label = SecondaryLabel("Enter your display name to start using the app 😊.", fontSize: 17)
         return label
     }()
     
@@ -66,7 +67,6 @@ class DisplayNameViewController: UIViewController {
         }
         
         displayNameContainerView.snp.makeConstraints { make in
-            make.top.equalTo(backgraundImageView.snp.centerY).offset(80)
             make.left.equalTo(backgraundImageView.snp.left)
             make.right.equalTo(backgraundImageView.snp.right)
             make.bottom.equalTo(backgraundImageView.snp.bottom)
@@ -78,8 +78,9 @@ class DisplayNameViewController: UIViewController {
         }
         
         secondaryDisplayNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(getStartedTitleLabel.snp.top).offset(30)
+            make.top.equalTo(getStartedTitleLabel.snp.top).offset(40)
             make.left.equalTo(displayNameContainerView.snp.left).offset(50)
+            make.right.equalTo(displayNameContainerView.snp.right).inset(20)
         }
         
         displayNameTextField.snp.makeConstraints { make in
@@ -93,6 +94,7 @@ class DisplayNameViewController: UIViewController {
             make.top.equalTo(displayNameTextField.snp.bottom).offset(15)
             make.centerX.equalTo(displayNameTextField.snp.centerX)
             make.size.equalTo(displayNameTextField)
+            make.bottom.equalTo(displayNameContainerView.snp.bottom).inset(60)
         }
         
         super.updateViewConstraints()

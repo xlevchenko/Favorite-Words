@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        window?.rootViewController = SignUpViewController()
+        window?.rootViewController = AboutAppCollectionViewController(collectionViewLayout: layout)
         window?.makeKeyAndVisible()
     }
 

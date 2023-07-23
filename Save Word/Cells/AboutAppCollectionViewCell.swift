@@ -10,9 +10,11 @@ import SnapKit
 
 class AboutAppCollectionViewCell: UICollectionViewCell {
     
-    var aboutAppPage: AboutAppPage? {
+    static let cellIdentifier = "AboutAppCollectionViewCell"
+    
+    var configureAppPage: AboutAppPage? {
         didSet {
-            guard let page = aboutAppPage else { return }
+            guard let page = configureAppPage else { return }
             
             topImage.image = UIImage(named: page.imageName)
             headerTextLabel.text = page.headerText
