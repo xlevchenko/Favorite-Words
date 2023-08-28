@@ -10,6 +10,8 @@ import SnapKit
 
 class WelcomeViewController: UIViewController {
     
+    private let viewModel: WelcomeViewModel
+    
     let topImageContainerView = UIView()
     let welcomeImageView = UIImageView(image: UIImage(named: "welcome"))
     let welcomeLabel = TitleLabel("Welcome!", fontSize: 36)
@@ -32,6 +34,21 @@ class WelcomeViewController: UIViewController {
         return stack
     }()
     
+    var coordinator = MainFlowCoordinator()
+    
+    weak var delegete: MainFlowCoordinator?
+    
+    
+    
+    init(viewModel: WelcomeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.43, green: 0.38, blue: 0.98, alpha: 1.00)
@@ -45,6 +62,12 @@ class WelcomeViewController: UIViewController {
         stackView.addArrangedSubview(signInLabel)
         stackView.addArrangedSubview(signInButton)
         view.setNeedsUpdateConstraints()
+        
+        signUpButton.addTarget(self, action: #selector(singUpButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func singUpButtonTapped() {
+        viewModel.signUpButtonTapped()
     }
     
     override func updateViewConstraints() {

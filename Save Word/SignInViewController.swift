@@ -64,7 +64,7 @@ class SignInViewController: UIViewController {
         return label
     }()
     
-    let showSignUpSceenButton: UIButton = {
+    let signUpButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign Up", for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 15)
@@ -73,7 +73,7 @@ class SignInViewController: UIViewController {
     }()
     
     lazy var showSignUpSceenStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [showSignUpSceenLabel, showSignUpSceenButton])
+        let stackView = UIStackView(arrangedSubviews: [showSignUpSceenLabel, signUpButton])
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
         return stackView
@@ -101,7 +101,7 @@ class SignInViewController: UIViewController {
         view.updateConstraintsIfNeeded()
         
         signInButton.addTarget(self, action: #selector(showSWTabBarScreen), for: .touchUpInside)
-        showSignUpSceenButton.addTarget(self, action: #selector(showSignUpScreen), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(showSignUpScreen), for: .touchUpInside)
     }
     
     @objc func showSWTabBarScreen() {
@@ -112,10 +112,10 @@ class SignInViewController: UIViewController {
     }
     
     @objc func showSignUpScreen() {
-        let destination = SignUpViewController()
-        let navigationController = UINavigationController(rootViewController: destination)
-        navigationController.modalPresentationStyle = .fullScreen
-        self.present(navigationController, animated: true)
+//        let destination = SignUpViewController()
+//        let navigationController = UINavigationController(rootViewController: destination)
+//        navigationController.modalPresentationStyle = .fullScreen
+//        self.present(navigationController, animated: true)
     }
 
     override func updateViewConstraints() {

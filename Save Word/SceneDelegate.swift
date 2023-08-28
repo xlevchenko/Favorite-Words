@@ -10,16 +10,18 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var router: DefaultRouter?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        router = DefaultRouter(rootTransition: EmptyTransition())
+        let vc = router?.createWelcome()
+
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        window?.rootViewController = AboutAppCollectionViewController(collectionViewLayout: layout)
+        window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }
 

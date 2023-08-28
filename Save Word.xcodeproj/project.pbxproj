@@ -7,10 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6017114F296B686900316ECA /* AboutAppCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6017114E296B686900316ECA /* AboutAppCollectionViewController.swift */; };
+		6017114F296B686900316ECA /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6017114E296B686900316ECA /* AboutAppViewController.swift */; };
 		60171151296B69AE00316ECA /* AboutAppPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60171150296B69AE00316ECA /* AboutAppPage.swift */; };
 		60171154296B6AE100316ECA /* AboutAppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60171153296B6AE100316ECA /* AboutAppCollectionViewCell.swift */; };
 		603648472A5C92730096BE02 /* ProfileStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603648462A5C92730096BE02 /* ProfileStatusView.swift */; };
+		60371F492A9B9B7700B06159 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F482A9B9B7700B06159 /* MainFlowCoordinator.swift */; };
+		60371F4C2A9BA63200B06159 /* UIApplication + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F4B2A9BA63200B06159 /* UIApplication + Extension.swift */; };
+		60371F4F2A9CA0A900B06159 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F4E2A9CA0A900B06159 /* Router.swift */; };
+		60371F522A9CA33600B06159 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F512A9CA33600B06159 /* Transition.swift */; };
+		60371F552A9CA51900B06159 /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F542A9CA51900B06159 /* DefaultRouter.swift */; };
+		60371F582A9CAB5B00B06159 /* WelcomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F572A9CAB5B00B06159 /* WelcomeRoute.swift */; };
+		60371F5A2A9CAE2300B06159 /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F592A9CAE2300B06159 /* ModalTransition.swift */; };
+		60371F5C2A9CB31B00B06159 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F5B2A9CB31B00B06159 /* WelcomeViewModel.swift */; };
+		60371F5E2A9CC2E000B06159 /* AboutAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F5D2A9CC2E000B06159 /* AboutAppViewModel.swift */; };
+		60371F602A9CC35200B06159 /* AboutAppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F5F2A9CC35200B06159 /* AboutAppRoute.swift */; };
+		60371F622A9CC7B700B06159 /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F612A9CC7B700B06159 /* EmptyTransition.swift */; };
+		60371F642A9CDA3300B06159 /* SignUpRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F632A9CDA3300B06159 /* SignUpRoute.swift */; };
+		60371F662A9CDAE900B06159 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F652A9CDAE900B06159 /* SignUpViewModel.swift */; };
+		60371F682A9CE1F400B06159 /* AnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F672A9CE1F400B06159 /* AnimatedTransition.swift */; };
+		60371F6B2A9CE24200B06159 /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F6A2A9CE24200B06159 /* AnimatedTransitioning.swift */; };
+		60371F6D2A9CE27200B06159 /* FadeAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F6C2A9CE27200B06159 /* FadeAnimatedTransitioning.swift */; };
+		60371F6F2A9CE29600B06159 /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60371F6E2A9CE29600B06159 /* PushTransition.swift */; };
 		6041B8E128C3BD6700A19546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E028C3BD6700A19546 /* AppDelegate.swift */; };
 		6041B8E328C3BD6700A19546 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E228C3BD6700A19546 /* SceneDelegate.swift */; };
 		6041B8E528C3BD6700A19546 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041B8E428C3BD6700A19546 /* HomeViewController.swift */; };
@@ -33,15 +50,33 @@
 		60BA668C292146DC00922E56 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA668B292146DC00922E56 /* SignInViewController.swift */; };
 		60BA668E29216F5D00922E56 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA668D29216F5D00922E56 /* Helpers.swift */; };
 		60BA66912921778400922E56 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA66902921778400922E56 /* CustomTextField.swift */; };
+		60DAA2082A9936B300AD806F /* DescriptionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DAA2072A9936B300AD806F /* DescriptionEnum.swift */; };
 		60DBB542291D961600D4DB35 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DBB541291D961600D4DB35 /* CustomButton.swift */; };
 		60DE659F29198A5C00F5E115 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DE659E29198A5C00F5E115 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6017114E296B686900316ECA /* AboutAppCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppCollectionViewController.swift; sourceTree = "<group>"; };
+		6017114E296B686900316ECA /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 		60171150296B69AE00316ECA /* AboutAppPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppPage.swift; sourceTree = "<group>"; };
 		60171153296B6AE100316ECA /* AboutAppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppCollectionViewCell.swift; sourceTree = "<group>"; };
 		603648462A5C92730096BE02 /* ProfileStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusView.swift; sourceTree = "<group>"; };
+		60371F482A9B9B7700B06159 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
+		60371F4B2A9BA63200B06159 /* UIApplication + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Extension.swift"; sourceTree = "<group>"; };
+		60371F4E2A9CA0A900B06159 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		60371F512A9CA33600B06159 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		60371F542A9CA51900B06159 /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
+		60371F572A9CAB5B00B06159 /* WelcomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRoute.swift; sourceTree = "<group>"; };
+		60371F592A9CAE2300B06159 /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
+		60371F5B2A9CB31B00B06159 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		60371F5D2A9CC2E000B06159 /* AboutAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewModel.swift; sourceTree = "<group>"; };
+		60371F5F2A9CC35200B06159 /* AboutAppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppRoute.swift; sourceTree = "<group>"; };
+		60371F612A9CC7B700B06159 /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
+		60371F632A9CDA3300B06159 /* SignUpRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRoute.swift; sourceTree = "<group>"; };
+		60371F652A9CDAE900B06159 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		60371F672A9CE1F400B06159 /* AnimatedTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransition.swift; sourceTree = "<group>"; };
+		60371F6A2A9CE24200B06159 /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
+		60371F6C2A9CE27200B06159 /* FadeAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		60371F6E2A9CE29600B06159 /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		6041B8DD28C3BD6700A19546 /* Save Word.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Save Word.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6041B8E028C3BD6700A19546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6041B8E228C3BD6700A19546 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +99,7 @@
 		60BA668B292146DC00922E56 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		60BA668D29216F5D00922E56 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		60BA66902921778400922E56 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		60DAA2072A9936B300AD806F /* DescriptionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionEnum.swift; sourceTree = "<group>"; };
 		60DBB541291D961600D4DB35 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		60DE659E29198A5C00F5E115 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				60171150296B69AE00316ECA /* AboutAppPage.swift */,
+				60DAA2072A9936B300AD806F /* DescriptionEnum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -115,6 +152,65 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		60371F4A2A9BA60100B06159 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				60371F4B2A9BA63200B06159 /* UIApplication + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		60371F4D2A9CA07A00B06159 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				60371F4E2A9CA0A900B06159 /* Router.swift */,
+				60371F692A9CE23100B06159 /* Animator */,
+				60371F532A9CA50200B06159 /* Routers */,
+				60371F562A9CAB1300B06159 /* Routes */,
+				60371F502A9CA32400B06159 /* Transition */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		60371F502A9CA32400B06159 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				60371F512A9CA33600B06159 /* Transition.swift */,
+				60371F592A9CAE2300B06159 /* ModalTransition.swift */,
+				60371F612A9CC7B700B06159 /* EmptyTransition.swift */,
+				60371F672A9CE1F400B06159 /* AnimatedTransition.swift */,
+				60371F6E2A9CE29600B06159 /* PushTransition.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		60371F532A9CA50200B06159 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				60371F542A9CA51900B06159 /* DefaultRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		60371F562A9CAB1300B06159 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				60371F572A9CAB5B00B06159 /* WelcomeRoute.swift */,
+				60371F5F2A9CC35200B06159 /* AboutAppRoute.swift */,
+				60371F632A9CDA3300B06159 /* SignUpRoute.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		60371F692A9CE23100B06159 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				60371F6A2A9CE24200B06159 /* AnimatedTransitioning.swift */,
+				60371F6C2A9CE27200B06159 /* FadeAnimatedTransitioning.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
 		6041B8D428C3BD6700A19546 = {
 			isa = PBXGroup;
 			children = (
@@ -134,21 +230,27 @@
 		6041B8DF28C3BD6700A19546 /* Save Word */ = {
 			isa = PBXGroup;
 			children = (
+				60371F4A2A9BA60100B06159 /* Extension */,
 				6041B8E028C3BD6700A19546 /* AppDelegate.swift */,
 				6041B8E228C3BD6700A19546 /* SceneDelegate.swift */,
+				60371F482A9B9B7700B06159 /* MainFlowCoordinator.swift */,
 				603648482A5C94B80096BE02 /* Resources */,
 				603648452A5C919A0096BE02 /* Views */,
 				60DE659E29198A5C00F5E115 /* WelcomeViewController.swift */,
+				60371F5B2A9CB31B00B06159 /* WelcomeViewModel.swift */,
 				60BA668B292146DC00922E56 /* SignInViewController.swift */,
 				6093227F293DE49400A96F11 /* SignUpViewController.swift */,
+				60371F652A9CDAE900B06159 /* SignUpViewModel.swift */,
 				609B53362938D58F006FA178 /* ForgotPasswordViewController.swift */,
 				608852FB294C616F00BC0CC0 /* SetDisplayNameViewController.swift */,
-				6017114E296B686900316ECA /* AboutAppCollectionViewController.swift */,
+				6017114E296B686900316ECA /* AboutAppViewController.swift */,
+				60371F5D2A9CC2E000B06159 /* AboutAppViewModel.swift */,
 				60171155296B6AF500316ECA /* Cells */,
 				60171152296B6A8100316ECA /* Models */,
 				60BA403F291D9EC400F9533C /* Custom Views */,
 				6041B8E428C3BD6700A19546 /* HomeViewController.swift */,
 				6086B22D290C34DF00FA85C5 /* SWTabBarController.swift */,
+				60371F4D2A9CA07A00B06159 /* Routing */,
 				6041B8EC28C3BD6A00A19546 /* Assets.xcassets */,
 				6041B8EE28C3BD6A00A19546 /* LaunchScreen.storyboard */,
 				6041B8F128C3BD6A00A19546 /* Info.plist */,
@@ -283,25 +385,43 @@
 			files = (
 				603648472A5C92730096BE02 /* ProfileStatusView.swift in Sources */,
 				6095BE422A63193600785BE8 /* WordsListCell.swift in Sources */,
+				60371F622A9CC7B700B06159 /* EmptyTransition.swift in Sources */,
+				60371F602A9CC35200B06159 /* AboutAppRoute.swift in Sources */,
 				608852FC294C617000BC0CC0 /* SetDisplayNameViewController.swift in Sources */,
 				60997245292C026A001208E7 /* BodyLabel.swift in Sources */,
+				60371F682A9CE1F400B06159 /* AnimatedTransition.swift in Sources */,
 				6041B8E528C3BD6700A19546 /* HomeViewController.swift in Sources */,
+				60371F582A9CAB5B00B06159 /* WelcomeRoute.swift in Sources */,
+				60371F492A9B9B7700B06159 /* MainFlowCoordinator.swift in Sources */,
 				60DBB542291D961600D4DB35 /* CustomButton.swift in Sources */,
+				60371F5E2A9CC2E000B06159 /* AboutAppViewModel.swift in Sources */,
+				60371F5A2A9CAE2300B06159 /* ModalTransition.swift in Sources */,
 				60997247292C0299001208E7 /* SecondaryLabel.swift in Sources */,
 				6095BE462A63359800785BE8 /* HeaderReusableViewі.swift in Sources */,
-				6017114F296B686900316ECA /* AboutAppCollectionViewController.swift in Sources */,
+				6017114F296B686900316ECA /* AboutAppViewController.swift in Sources */,
 				6086B22E290C34DF00FA85C5 /* SWTabBarController.swift in Sources */,
+				60371F522A9CA33600B06159 /* Transition.swift in Sources */,
+				60371F6B2A9CE24200B06159 /* AnimatedTransitioning.swift in Sources */,
 				6041B8EB28C3BD6700A19546 /* Favorite_Words.xcdatamodeld in Sources */,
 				60171151296B69AE00316ECA /* AboutAppPage.swift in Sources */,
 				6095BE442A6323AB00785BE8 /* NSCollectionLayoutItem+Extension.swift in Sources */,
+				60371F6F2A9CE29600B06159 /* PushTransition.swift in Sources */,
 				60997243292C024B001208E7 /* TitleLabel.swift in Sources */,
 				60BA66912921778400922E56 /* CustomTextField.swift in Sources */,
+				60DAA2082A9936B300AD806F /* DescriptionEnum.swift in Sources */,
 				609B53372938D58F006FA178 /* ForgotPasswordViewController.swift in Sources */,
+				60371F662A9CDAE900B06159 /* SignUpViewModel.swift in Sources */,
+				60371F642A9CDA3300B06159 /* SignUpRoute.swift in Sources */,
 				60BA668E29216F5D00922E56 /* Helpers.swift in Sources */,
+				60371F6D2A9CE27200B06159 /* FadeAnimatedTransitioning.swift in Sources */,
+				60371F4C2A9BA63200B06159 /* UIApplication + Extension.swift in Sources */,
 				60BA668C292146DC00922E56 /* SignInViewController.swift in Sources */,
+				60371F552A9CA51900B06159 /* DefaultRouter.swift in Sources */,
 				60DE659F29198A5C00F5E115 /* WelcomeViewController.swift in Sources */,
 				609D510D2A608DA6002335A4 /* DashboardView.swift in Sources */,
 				60171154296B6AE100316ECA /* AboutAppCollectionViewCell.swift in Sources */,
+				60371F5C2A9CB31B00B06159 /* WelcomeViewModel.swift in Sources */,
+				60371F4F2A9CA0A900B06159 /* Router.swift in Sources */,
 				60932280293DE49400A96F11 /* SignUpViewController.swift in Sources */,
 				6041B8E128C3BD6700A19546 /* AppDelegate.swift in Sources */,
 				6041B8E328C3BD6700A19546 /* SceneDelegate.swift in Sources */,

@@ -7,17 +7,12 @@
 
 import UIKit
 import SnapKit
-import Combine
 
 
-enum PageAboutApp: Int, CaseIterable {
-    case one = 0
-    case two
-    case tree
-    case four
-}
-
-class AboutAppCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class AboutAppViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    private let viewModel: AboutAppViewModel
+    private let flowLayout: UICollectionViewFlowLayout
     
     private let prevButton: UIButton = {
         let button = UIButton(type: .system)
@@ -27,11 +22,10 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         return button
     }()
     
-    
     private lazy var pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPage = 0
-        pc.numberOfPages = pages.count
+        pc.numberOfPages = pagesDataModel.count
         pc.currentPageIndicatorTintColor = .black
         pc.pageIndicatorTintColor = .gray
         pc.isUserInteractionEnabled = false
@@ -51,15 +45,25 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         stackView.distribution = .fillEqually
         return stackView
     }()
+        
+    let pagesDataModel = AboutAppPage.data
     
-    let pages = [
-        AboutAppPage(imageName: "AboutAppImage1", headerText: "Creating your word lists", bodyText: "The first step is to build your very own word lists. By doing so, you'll have the chance to focus on the words that genuinely interest you or those that are relevant to your studies or profession. These lists will be your personal toolkit for learning and growth."),
-        AboutAppPage(imageName: "AboutAppImage2", headerText: "Expand your vocabulary with Quiz Games", bodyText: "With our flexible study approach and fun Quiz game, you can now make the process of language acquisition more enjoyable and effective."),
-        AboutAppPage(imageName: "AboutAppImage3", headerText: "The Power of Listening", bodyText: "Listening attentively is the first step in honing your pronunciation. The audio assistant is here to guide you with accurate pronunciation and enunciation. Pay close attention to how each word is pronounced, focusing on the sounds, stress, and rhythm.")
-    ]
-    
+    var coordinator = MainFlowCoordinator()
+
     
     //MARK: - App Lifecycle methods
+    
+    init(viewModel: AboutAppViewModel, layout: UICollectionViewFlowLayout) {
+        self.viewModel = viewModel
+        self.flowLayout = layout
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(AboutAppCollectionViewCell.self, forCellWithReuseIdentifier: AboutAppCollectionViewCell.cellIdentifier)
@@ -81,53 +85,56 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
         let indexPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        updateButtonState(page: indexPath.item)
+        updateButtonState(index: indexPath.item)
     }
     
-    @objc func handleNextButton() {
-        let nextIndex = min(pageControl.currentPage + 1, pages.count - 1)
+    @objc func handleNextButton(sender: UIButton) {
+        
+        let nextIndex = min(pageControl.currentPage + 1, pagesDataModel.count - 1)
         let indexPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        updateButtonState(page: pageControl.currentPage)
+        updateButtonState(index: pageControl.currentPage)
     }
     
     @objc func handlePageControl() {
         let currentPage = pageControl.currentPage
         let indexPath = IndexPath(item: currentPage, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        updateButtonState(page: currentPage)
+        updateButtonState(index: currentPage)
     }
     
-    func updateButtonState(page: PageAboutApp.RawValue) {
-        switch page {
+    func updateButtonState(index: PageApp.RawValue) {
+        switch index {
         case 0:
             prevButton.setTitle("", for: .normal)
             prevButton.isEnabled = false
             nextButton.setTitle("NEXT", for: .normal)
             nextButton.setTitleColor(.black, for: .normal)
-        
+            print("initPage")
+            
         case 1:
             prevButton.isEnabled = true
             prevButton.setTitle("PREV", for: .normal)
             nextButton.setTitle("NEXT", for: .normal)
             nextButton.setTitleColor(.black, for: .normal)
-       
+            print("nextPage")
+            
         case 2:
             prevButton.isEnabled = true
             prevButton.setTitle("PREV", for: .normal)
             nextButton.setTitle("START!", for: .normal)
-
+            print("lastPage")
+            
+        case 3:
+//            let vc = coordinator.showWelcomeScreen()
+//            UIApplication.shared.setRootController(vc)
+           
+            print("Show Welcome Screen")
+        
         default:
-            print(#function)
+            break
         }
-    }
-    
-    
-   @objc func pushStartViewController() {
-        let aboutAppCollectionVC = WelcomeViewController()
-        let navigationController = UINavigationController(rootViewController: aboutAppCollectionVC)
-        present(navigationController, animated: true, completion: nil)
     }
     
     
@@ -135,20 +142,25 @@ class AboutAppCollectionViewController: UICollectionViewController, UICollection
     override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let x = targetContentOffset.pointee.x
         pageControl.currentPage = Int(x / view.frame.width)
-        updateButtonState(page: pageControl.currentPage)
+        updateButtonState(index: pageControl.currentPage)
+    }
+    
+    
+    deinit {
+        print("deinit")
     }
 }
 
 
 //MARK: - UICollectionViewDataSource
-extension AboutAppCollectionViewController {
+extension AboutAppViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pages.count
+        return pagesDataModel.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AboutAppCollectionViewCell.cellIdentifier, for: indexPath) as! AboutAppCollectionViewCell
-        let pages = pages[indexPath.row]
+        let pages = pagesDataModel[indexPath.row]
         cell.configureAppPage = pages
         
         return cell
@@ -165,7 +177,7 @@ extension AboutAppCollectionViewController {
 
 
 //MARK: - Layout constraint
-extension AboutAppCollectionViewController {
+extension AboutAppViewController {
     override func updateViewConstraints() {
         scrollButtonsStackView.snp.makeConstraints { make in
             make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
