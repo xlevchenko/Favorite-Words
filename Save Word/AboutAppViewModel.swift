@@ -15,4 +15,8 @@ final class AboutAppViewModel {
     init(router: Routes) {
         self.router = router
     }
+    
+    func startButtonTapped() {
+        router.openWelcomeScreen()
+    }
 }

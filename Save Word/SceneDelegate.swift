@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         router = DefaultRouter(rootTransition: EmptyTransition())
-        let vc = router?.createWelcome()
+        let vc = router?.openAboutAppScreen()
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene

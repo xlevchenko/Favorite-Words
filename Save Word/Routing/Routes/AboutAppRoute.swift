@@ -17,13 +17,10 @@ extension AboutAppRoute where Self: Router {
     func openAboutAppScreen() -> UIViewController {
         let router = DefaultRouter(rootTransition: EmptyTransition())
         let viewModel = AboutAppViewModel(router: router)
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        let viewController = AboutAppViewController(viewModel: viewModel, layout: layout)
+        let viewController = AboutAppViewController(viewModel: viewModel)
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.setNavigationBarHidden(true, animated: false)
         router.root = viewController
-        
         
         return navigationController
     }

@@ -9,10 +9,11 @@ import UIKit
 import SnapKit
 
 
-class AboutAppViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class AboutAppViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     
     private let viewModel: AboutAppViewModel
-    private let flowLayout: UICollectionViewFlowLayout
+    
+    private var collectionView: UICollectionView!
     
     private let prevButton: UIButton = {
         let button = UIButton(type: .system)
@@ -53,9 +54,8 @@ class AboutAppViewController: UICollectionViewController, UICollectionViewDelega
     
     //MARK: - App Lifecycle methods
     
-    init(viewModel: AboutAppViewModel, layout: UICollectionViewFlowLayout) {
+    init(viewModel: AboutAppViewModel) {
         self.viewModel = viewModel
-        self.flowLayout = layout
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -66,15 +66,16 @@ class AboutAppViewController: UICollectionViewController, UICollectionViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(AboutAppCollectionViewCell.self, forCellWithReuseIdentifier: AboutAppCollectionViewCell.cellIdentifier)
-        collectionView.isPagingEnabled = true
-        collectionView.showsHorizontalScrollIndicator = false
+        
+        setupCollectionView()
         
         nextButton.addTarget(self, action: #selector(handleNextButton), for: .touchUpInside)
         prevButton.addTarget(self, action: #selector(handlePrevButton), for: .touchUpInside)
         pageControl.addTarget(self, action: #selector(handlePageControl), for: .touchUpInside)
         
-        view.addSubview(scrollButtonsStackView)
+        
+        view.addSubview(collectionView)
+        collectionView.addSubview(scrollButtonsStackView)
         view.setNeedsUpdateConstraints()
     }
     
@@ -129,7 +130,7 @@ class AboutAppViewController: UICollectionViewController, UICollectionViewDelega
         case 3:
 //            let vc = coordinator.showWelcomeScreen()
 //            UIApplication.shared.setRootController(vc)
-           
+            viewModel.startButtonTapped()
             print("Show Welcome Screen")
         
         default:
@@ -139,26 +140,39 @@ class AboutAppViewController: UICollectionViewController, UICollectionViewDelega
     
     
     //MARK: - Override Methods
-    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let x = targetContentOffset.pointee.x
         pageControl.currentPage = Int(x / view.frame.width)
         updateButtonState(index: pageControl.currentPage)
     }
+   
     
+    //MARK: - Private Methods
     
-    deinit {
-        print("deinit")
+    private func setupCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.isPagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.contentInsetAdjustmentBehavior = .never
+        
+        collectionView.register(AboutAppCollectionViewCell.self, forCellWithReuseIdentifier: AboutAppCollectionViewCell.cellIdentifier)
     }
 }
 
 
+
+
 //MARK: - UICollectionViewDataSource
-extension AboutAppViewController {
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension AboutAppViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pagesDataModel.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AboutAppCollectionViewCell.cellIdentifier, for: indexPath) as! AboutAppCollectionViewCell
         let pages = pagesDataModel[indexPath.row]
         cell.configureAppPage = pages
@@ -179,6 +193,15 @@ extension AboutAppViewController {
 //MARK: - Layout constraint
 extension AboutAppViewController {
     override func updateViewConstraints() {
+        
+        collectionView.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+             make.top.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+
+        }
+        
         scrollButtonsStackView.snp.makeConstraints { make in
             make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
             make.right.equalTo(view.safeAreaLayoutGuide.snp.right)

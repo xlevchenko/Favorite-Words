@@ -25,7 +25,7 @@ extension WelcomeRoute where Self: Router {
     }
     
     func openWelcomeScreen() {
-        openWelcomeScreen(with: ModalTransition())
+        openWelcomeScreen(with: ModalTransition(isAnimated: true, modalTransitionStyle: .flipHorizontal, modalPresentationStyle: .fullScreen))
     }
     
     func createWelcome() -> UIViewController {
