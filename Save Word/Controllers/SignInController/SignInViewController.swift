@@ -10,6 +10,7 @@ import SnapKit
 
 class SignInViewController: UIViewController {
     
+    private let viewModel: SignInViewModel
     let logoContainerView = UIView()
     let logoImageView = UIImageView(image: UIImage(named: "logoWhite"))
     let signInContainerView = UIView(cornerRadius: 59, backgroundColor: .white)
@@ -79,6 +80,15 @@ class SignInViewController: UIViewController {
         return stackView
     }()
     
+    init(viewModel: SignInViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,20 +112,19 @@ class SignInViewController: UIViewController {
         
         signInButton.addTarget(self, action: #selector(showSWTabBarScreen), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(showSignUpScreen), for: .touchUpInside)
+        forgotPasswordButton.addTarget(self, action: #selector(showforgotPasswordScreen), for: .touchUpInside)
     }
     
     @objc func showSWTabBarScreen() {
-        let destination = SWTabBarController()
-        let navigationController = UINavigationController(rootViewController: destination)
-        navigationController.modalPresentationStyle = .fullScreen
-        self.present(navigationController, animated: true)
+        viewModel.openHomeScreen()
     }
     
     @objc func showSignUpScreen() {
-//        let destination = SignUpViewController()
-//        let navigationController = UINavigationController(rootViewController: destination)
-//        navigationController.modalPresentationStyle = .fullScreen
-//        self.present(navigationController, animated: true)
+        viewModel.openSignUpScreen()
+    }
+    
+    @objc func showforgotPasswordScreen() {
+        viewModel.openForgetPasswordScreen()
     }
 
     override func updateViewConstraints() {

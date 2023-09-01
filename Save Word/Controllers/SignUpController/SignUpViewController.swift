@@ -78,7 +78,7 @@ class SignUpViewController: UIViewController {
         return label
     }()
     
-    let showSignUpSceenButton: UIButton = {
+    let signInScreenButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign In", for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 15)
@@ -87,7 +87,7 @@ class SignUpViewController: UIViewController {
     }()
     
     lazy var showSignInSceenStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [haveAccountLabel, showSignUpSceenButton])
+        let stackView = UIStackView(arrangedSubviews: [haveAccountLabel, signInScreenButton])
         stackView.axis = .horizontal
         return stackView
     }()
@@ -123,21 +123,19 @@ class SignUpViewController: UIViewController {
         view.updateConstraintsIfNeeded()
         
         signUpButton.addTarget(self, action: #selector(showSWTabBarScreen), for: .touchUpInside)
-        showSignUpSceenButton.addTarget(self, action: #selector(showSignInScreen), for: .touchUpInside)
+        signInScreenButton.addTarget(self, action: #selector(showSignInScreen), for: .touchUpInside)
     }
     
     @objc func showSWTabBarScreen() {
-        let destination = SWTabBarController()
-        let navigationController = UINavigationController(rootViewController: destination)
-        navigationController.modalPresentationStyle = .fullScreen
-        self.present(navigationController, animated: true)
+//        let destination = TabBarController()
+//        let navigationController = UINavigationController(rootViewController: destination)
+//        navigationController.modalPresentationStyle = .fullScreen
+//        self.present(navigationController, animated: true)
+        viewModel.openHomeScreen()
     }
     
     @objc func showSignInScreen() {
-        let signInViewController = SignInViewController()
-        let navigationController = UINavigationController(rootViewController: signInViewController)
-        navigationController.modalPresentationStyle = .fullScreen
-        self.present(navigationController, animated: true)
+        viewModel.openSignInScreen()
     }
     
     override func updateViewConstraints() {

@@ -46,11 +46,18 @@ class AboutAppViewController: UIViewController, UICollectionViewDelegateFlowLayo
         stackView.distribution = .fillEqually
         return stackView
     }()
-        
+    
+    private lazy var startButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.isEnabled = false
+        return button
+    }()
+    
+    
     let pagesDataModel = AboutAppPage.data
     
     var coordinator = MainFlowCoordinator()
-
+    
     
     //MARK: - App Lifecycle methods
     
@@ -72,10 +79,12 @@ class AboutAppViewController: UIViewController, UICollectionViewDelegateFlowLayo
         nextButton.addTarget(self, action: #selector(handleNextButton), for: .touchUpInside)
         prevButton.addTarget(self, action: #selector(handlePrevButton), for: .touchUpInside)
         pageControl.addTarget(self, action: #selector(handlePageControl), for: .touchUpInside)
+        startButton.addTarget(self, action: #selector(handleStartButton), for: .touchUpInside)
         
         
         view.addSubview(collectionView)
         collectionView.addSubview(scrollButtonsStackView)
+        collectionView.addSubview(startButton)
         view.setNeedsUpdateConstraints()
     }
     
@@ -105,6 +114,11 @@ class AboutAppViewController: UIViewController, UICollectionViewDelegateFlowLayo
         updateButtonState(index: currentPage)
     }
     
+    @objc func handleStartButton() {
+        viewModel.startButtonTapped()
+        print("Show Welcome Screen")
+    }
+    
     func updateButtonState(index: PageApp.RawValue) {
         switch index {
         case 0:
@@ -119,22 +133,17 @@ class AboutAppViewController: UIViewController, UICollectionViewDelegateFlowLayo
             prevButton.setTitle("PREV", for: .normal)
             nextButton.setTitle("NEXT", for: .normal)
             nextButton.setTitleColor(.black, for: .normal)
+            startButton.isEnabled = false
             print("nextPage")
             
         case 2:
             prevButton.isEnabled = true
             prevButton.setTitle("PREV", for: .normal)
             nextButton.setTitle("START!", for: .normal)
+            startButton.isEnabled = true
             print("lastPage")
             
-        case 3:
-//            let vc = coordinator.showWelcomeScreen()
-//            UIApplication.shared.setRootController(vc)
-            viewModel.startButtonTapped()
-            print("Show Welcome Screen")
-        
-        default:
-            break
+        default: break
         }
     }
     
@@ -145,7 +154,7 @@ class AboutAppViewController: UIViewController, UICollectionViewDelegateFlowLayo
         pageControl.currentPage = Int(x / view.frame.width)
         updateButtonState(index: pageControl.currentPage)
     }
-   
+    
     
     //MARK: - Private Methods
     
@@ -162,8 +171,6 @@ class AboutAppViewController: UIViewController, UICollectionViewDelegateFlowLayo
         collectionView.register(AboutAppCollectionViewCell.self, forCellWithReuseIdentifier: AboutAppCollectionViewCell.cellIdentifier)
     }
 }
-
-
 
 
 //MARK: - UICollectionViewDataSource
@@ -193,13 +200,10 @@ extension AboutAppViewController: UICollectionViewDataSource {
 //MARK: - Layout constraint
 extension AboutAppViewController {
     override func updateViewConstraints() {
-        
         collectionView.snp.makeConstraints { make in
-//            make.edges.equalToSuperview()
-             make.top.equalToSuperview()
+            make.top.equalToSuperview()
             make.left.right.equalToSuperview()
             make.bottom.equalToSuperview()
-
         }
         
         scrollButtonsStackView.snp.makeConstraints { make in
@@ -208,6 +212,17 @@ extension AboutAppViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.height.equalTo(50)
         }
+        
+        let width = view.frame.width / 3
+        
+        startButton.snp.makeConstraints { make in
+            make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.height.equalTo(50)
+            make.width.equalTo(width)
+        }
+        
+        
         super.updateViewConstraints()
     }
 }

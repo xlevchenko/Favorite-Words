@@ -24,8 +24,6 @@ extension AboutAppRoute where Self: Router {
         
         return navigationController
     }
-    
-   
 }
 
 extension DefaultRouter: AboutAppRoute { }

@@ -10,7 +10,10 @@ import SnapKit
 
 class ForgotPasswordViewController: UIViewController {
     
+    private let viewModel: ForgotPasswordViewModel
+    
     let illustrationContainerView = UIView()
+    
     let illustrationImageView: UIImageView = {
        let imageView = UIImageView(image: UIImage(named: "forgotPassword"))
         imageView.contentMode = .scaleAspectFit
@@ -43,6 +46,15 @@ class ForgotPasswordViewController: UIViewController {
         let button = CustomButton(title: "Reset password")
         return button
     }()
+    
+    init(viewModel: ForgotPasswordViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

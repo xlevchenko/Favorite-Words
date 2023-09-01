@@ -9,7 +9,7 @@ import Foundation
 
 
 final class WelcomeViewModel {
-    typealias Routes = WelcomeRoute & AboutAppRoute & SignUpRoute
+    typealias Routes =  SignInRoute & SignUpRoute
     
     private var router: Routes
     
@@ -17,12 +17,11 @@ final class WelcomeViewModel {
         self.router = router
     }
     
-    func signUpButtonTapped() {
-        print("some")
+    func openSignUpScreen() {
         router.openSignUpScreen()
     }
     
-    func signInButtonTapped() {
-        
+    func openSignInScreen() {
+        router.openSignInScreen()
     }
 }

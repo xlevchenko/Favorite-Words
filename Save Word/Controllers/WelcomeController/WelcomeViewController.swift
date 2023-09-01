@@ -64,11 +64,17 @@ class WelcomeViewController: UIViewController {
         view.setNeedsUpdateConstraints()
         
         signUpButton.addTarget(self, action: #selector(singUpButtonTapped), for: .touchUpInside)
+        signInButton.addTarget(self, action: #selector(singInButtonTapped), for: .touchUpInside)
     }
     
     @objc func singUpButtonTapped() {
-        viewModel.signUpButtonTapped()
+        viewModel.openSignUpScreen()
     }
+    
+    @objc func singInButtonTapped() {
+        viewModel.openSignInScreen()
+    }
+    
     
     override func updateViewConstraints() {
         

@@ -9,7 +9,6 @@ import UIKit
 
 protocol WelcomeRoute {
     func openWelcomeScreen()
-    func createWelcome() -> UIViewController
 }
 
 extension WelcomeRoute where Self: Router {
@@ -26,16 +25,6 @@ extension WelcomeRoute where Self: Router {
     
     func openWelcomeScreen() {
         openWelcomeScreen(with: ModalTransition(isAnimated: true, modalTransitionStyle: .flipHorizontal, modalPresentationStyle: .fullScreen))
-    }
-    
-    func createWelcome() -> UIViewController {
-        let router = DefaultRouter(rootTransition: EmptyTransition())
-        let viewModel = WelcomeViewModel(router: router)
-        let viewController = WelcomeViewController(viewModel: viewModel)
-        let navigationController = UINavigationController(rootViewController: viewController)
-        router.root = viewController
-        
-        return navigationController
     }
 }
 

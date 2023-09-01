@@ -6,11 +6,19 @@
 //
 
 final class SignUpViewModel {
-    typealias Routes = WelcomeRoute & AboutAppRoute
+    typealias Routes = SignInRoute & SignUpRoute & TabBarRoute
     
     private var router: Routes
     
     init(router: Routes) {
         self.router = router
+    }
+    
+    func openSignInScreen() {
+        router.openSignInScreen()
+    }
+    
+    func openHomeScreen() {
+        router.openTabBarController()
     }
 }
